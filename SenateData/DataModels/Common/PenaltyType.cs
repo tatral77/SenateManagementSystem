@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EstablishmentENT
 {
-    public class PenaltyTypes
+    public class PenaltyType
     {
         public int PenaltyTypeId { get; set; }
         public string PenaltyType { get; set; }

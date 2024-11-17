@@ -1,4 +1,6 @@
-namespace SenateData.DataModels.Common
+using SenateData.DataModels.Common;
+
+namespace SenateData.DataModels.Question
 {
     public class QuestionGroup
     {

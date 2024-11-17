@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EstablishmentENT
+namespace SenateData.DataModels.Common
 {
-    public class ContractTypes
+    public class ContractType
     {
-        public int ContractTypeId{get;set;}
+        public int ContractTypeId { get; set; }
         public string ContractType { get; set; }
     }
 }

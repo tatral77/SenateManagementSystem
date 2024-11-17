@@ -15,5 +15,10 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Models\CommonModels\BasicPayScale\" />
+	  <Folder Include="Models\CommonModels\BillStatus\" />
+	  <Folder Include="Models\CommonModels\Booking\" />
+	</ItemGroup>
 
 </Project>
