@@ -27,14 +27,14 @@ namespace SenateData.DataModels
         public DbSet<BasicPayScale> BasicPayScales { get; set; }
         public DbSet<BillStatus> BillStatuses { get; set; }
         public DbSet<BillType> BillTypes { get; set; }
-        public DbSet<Branch> Bookings { get; set; }
+        public DbSet<Branch> Branch { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Constituency> Constituencies { get; set; }
         public DbSet<ContractType> ContractTypes { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<CourseType> CourseTypes { get; set; }
         public DbSet<District> Districts { get; set; }
-        public DbSet<Division> Divisions { get; set; }
+        public DbSet<MinistryDivision> Divisions { get; set; }
         public DbSet<EducationLevel> EducationLevels { get; set; }
         public DbSet<ElectionType> ElectionTypes { get; set; }
         public DbSet<Gender> Genders { get; set; }
@@ -62,7 +62,7 @@ namespace SenateData.DataModels
         public DbSet<ResolutionType> ResolutionTypes { get; set; }
         public DbSet<SeatType> SeatTypes { get; set; }
         public DbSet<SenateUser> SenateUsers { get; set; }
-        public DbSet<SessionSitting> SessionSittings { get; set; }
+        public DbSet<ParliamentarySessionSitting> SessionSittings { get; set; }
         public DbSet<SittingType> SittingTypes { get; set; }
         public DbSet<VisitType> VisitTypes { get; set; }
         #endregion  Common

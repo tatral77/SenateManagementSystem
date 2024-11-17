@@ -1,7 +1,10 @@
+using SenateCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.RegisterServices();
 
 var app = builder.Build();
 
@@ -25,3 +28,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+//https://ravindradevrani.medium.com/separating-the-di-setup-from-program-cs-file-45fd50969e0c

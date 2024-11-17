@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EstablishmentENT
 {
-    public class EmpPassports
+    public class EmployeePassport
     {
         private int empPassportId;
 

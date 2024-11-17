@@ -16,9 +16,46 @@
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Models\CommonModels\BasicPayScale\" />
 	  <Folder Include="Models\CommonModels\BillStatus\" />
-	  <Folder Include="Models\CommonModels\Booking\" />
+	  <Folder Include="Models\CommonModels\BillType\" />
+	  <Folder Include="Models\CommonModels\Branch\" />
+	  <Folder Include="Models\CommonModels\City\" />
+	  <Folder Include="Models\CommonModels\Constituency\" />
+	  <Folder Include="Models\CommonModels\ContractType\" />
+	  <Folder Include="Models\CommonModels\Country\" />
+	  <Folder Include="Models\CommonModels\Coursetype\" />
+	  <Folder Include="Models\CommonModels\District\" />
+	  <Folder Include="Models\CommonModels\Division\" />
+	  <Folder Include="Models\CommonModels\EducationLevel\" />
+	  <Folder Include="Models\CommonModels\ElectionType\" />
+	  <Folder Include="Models\CommonModels\Gender\" />
+	  <Folder Include="Models\CommonModels\HouseAffiliation\" />
+	  <Folder Include="Models\CommonModels\MaritalStatus\" />
+	  <Folder Include="Models\CommonModels\MemberStatus\" />
+	  <Folder Include="Models\CommonModels\Ministry\" />
+	  <Folder Include="Models\CommonModels\MotionStatus\" />
+	  <Folder Include="Models\CommonModels\MotionType\" />
+	  <Folder Include="Models\CommonModels\VisitType\" />
+	  <Folder Include="Models\CommonModels\SittingType\" />
+	  <Folder Include="Models\CommonModels\SessionSitting\" />
+	  <Folder Include="Models\CommonModels\SenateUser\" />
+	  <Folder Include="Models\CommonModels\SeatType\" />
+	  <Folder Include="Models\CommonModels\ResolutionType\" />
+	  <Folder Include="Models\CommonModels\ResolutionStatus\" />
+	  <Folder Include="Models\CommonModels\Religion\" />
+	  <Folder Include="Models\CommonModels\Relation\" />
+	  <Folder Include="Models\CommonModels\Province\" />
+	  <Folder Include="Models\CommonModels\Post\" />
+	  <Folder Include="Models\CommonModels\PoliticalParty\" />
+	  <Folder Include="Models\CommonModels\PhoneType\" />
+	  <Folder Include="Models\CommonModels\PenaltyType\" />
+	  <Folder Include="Models\CommonModels\PassportType\" />
+	  <Folder Include="Models\CommonModels\PartyDesignation\" />
+	  <Folder Include="Models\CommonModels\ParliamentaryYear\" />
+	  <Folder Include="Models\CommonModels\ParliamentaryTerm\" />
+	  <Folder Include="Models\CommonModels\ParliamentaryTenure\" />
+	  <Folder Include="Models\CommonModels\ParliamentarySession\" />
+	  <Folder Include="Models\CommonModels\NOCType\" />
 	</ItemGroup>
 
 </Project>

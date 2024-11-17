@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EstablishmentENT
 {
-    public class EmployeeVisits
+    public class EmployeeVisit
     {
         public int ForeignVisitId { get; set; }
         public int System_User_Id { get; set; }

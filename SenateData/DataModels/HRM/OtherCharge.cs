@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EstablishmentENT
 {
-    public class OtherCharges
+    public class OtherCharge
     {
         public int OtherChargeId { get; set; }
         public int SystemUserId { get; set; }

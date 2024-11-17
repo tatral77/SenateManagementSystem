@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace SenateData.DataModels.Common
+namespace SenateCore.Models.CommonModels.BillOrigin
 {
-    public class ContractType
+    public class UpdateBillOriginDto : BaseBillOriginDto
     {
         public int Id { get; set; }
-        public string Description { get; set; }
     }
 }

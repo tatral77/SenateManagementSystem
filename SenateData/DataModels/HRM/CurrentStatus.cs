@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EstablishmentENT
 {
-    public class CurrentStatuses
+    public class CurrentStatus
     {
         public int CurrentStatusId { get; set; }
         public string CurrentStatus { get; set; }

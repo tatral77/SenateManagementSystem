@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EstablishmentENT
 {
-    public class EmployeePhones
+    public class EmployeePhone
     {
         private int empId;
 

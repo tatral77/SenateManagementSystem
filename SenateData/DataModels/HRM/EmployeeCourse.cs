@@ -6,7 +6,7 @@ using System.Text;
 namespace EstablishmentENT
 {
   
-        public class EmployeeCourses
+        public class EmployeeCourse
         {
             int empCourseId;
 

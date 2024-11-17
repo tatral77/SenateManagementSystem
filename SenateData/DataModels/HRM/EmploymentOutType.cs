@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SenateData.DataModels.HRM
 {
-    public class EmploymentOutTypes
+    public class EmploymentOutType
     {
         public int EmploymentOutTypeId { get; set; }
         public string EmploymentOuType { get; set; }

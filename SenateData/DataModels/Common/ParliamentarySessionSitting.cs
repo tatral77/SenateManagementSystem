@@ -1,6 +1,6 @@
 ﻿namespace SenateData.DataModels.Common
 {
-    public class SessionSitting
+    public class ParliamentarySessionSitting
     {
         public int Id { get; set; }
         public int ParliamentarySessionId { get; set; }

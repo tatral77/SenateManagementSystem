@@ -7,5 +7,6 @@
         public bool IsActive { get; set; }
         public int IsFedMin { get; set; }
         public int IsStatMin { get; set; }
+        public IList<MinistryDivision> MinistryDivisions { get; set; }
     }
 }
