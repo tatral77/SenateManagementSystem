@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.BranchModel
 {
-    internal class CreateBranchDto
+    public class CreateBranchDto:BaseBranchDto
     {
     }
 }

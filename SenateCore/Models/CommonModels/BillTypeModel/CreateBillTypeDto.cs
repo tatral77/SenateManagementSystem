@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.BillTypeModel
 {
-    internal class CreateBillTypeDto
+    public class CreateBillTypeDto : BaseBillTypeDto
     {
     }
 }

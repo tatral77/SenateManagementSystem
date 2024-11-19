@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.BranchModel
 {
-    internal class UpdateBranchDto
+    public class UpdateBranchDto:BaseBranchDto
     {
+        public int Id { get; set; }
     }
 }

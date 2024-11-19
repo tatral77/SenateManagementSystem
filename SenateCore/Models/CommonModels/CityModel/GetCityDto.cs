@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.CityModel
 {
-    internal class GetCityDto
+    public class GetCityDto:BaseCityDto
     {
+        public int Id { get; set; }
     }
 }
