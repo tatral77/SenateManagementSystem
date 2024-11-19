@@ -24,5 +24,8 @@
 	  <Folder Include="Controllers\" />
 	  <Folder Include="Controllers\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\SenateCore\SenateCore.csproj" />
+	</ItemGroup>
 
 </Project>

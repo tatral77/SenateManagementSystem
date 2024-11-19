@@ -1,4 +1,4 @@
-﻿namespace SenateData.DataModels.Question
+﻿namespace SenateData.DataModels.Questions
 {
     public class QuestionMovementHistory
     {

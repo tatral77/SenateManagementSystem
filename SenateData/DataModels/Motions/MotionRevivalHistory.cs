@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SenateData.DataModels.Motion
+namespace SenateData.DataModels.Motions
 {
     public class MotionRevivalHistory
     {

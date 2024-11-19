@@ -1,7 +1,7 @@
 ﻿using SenateData.DataModels.Common;
 using System;
 
-namespace SenateData.DataModels.Motion
+namespace SenateData.DataModels.Motions
 {
     public class MotionStatusHistory
     {

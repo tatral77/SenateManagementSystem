@@ -23,7 +23,7 @@
 	  <Folder Include="Models\CommonModels\Constituency\" />
 	  <Folder Include="Models\CommonModels\ContractType\" />
 	  <Folder Include="Models\CommonModels\Country\" />
-	  <Folder Include="Models\CommonModels\Coursetype\" />
+	  <Folder Include="Models\CommonModels\CourseType\" />
 	  <Folder Include="Models\CommonModels\District\" />
 	  <Folder Include="Models\CommonModels\Division\" />
 	  <Folder Include="Models\CommonModels\EducationLevel\" />
@@ -37,7 +37,7 @@
 	  <Folder Include="Models\CommonModels\MotionType\" />
 	  <Folder Include="Models\CommonModels\VisitType\" />
 	  <Folder Include="Models\CommonModels\SittingType\" />
-	  <Folder Include="Models\CommonModels\SessionSitting\" />
+	  <Folder Include="Models\CommonModels\ParliamentarySessionSitting\" />
 	  <Folder Include="Models\CommonModels\SenateUser\" />
 	  <Folder Include="Models\CommonModels\SeatType\" />
 	  <Folder Include="Models\CommonModels\ResolutionType\" />
@@ -56,6 +56,9 @@
 	  <Folder Include="Models\CommonModels\ParliamentaryTenure\" />
 	  <Folder Include="Models\CommonModels\ParliamentarySession\" />
 	  <Folder Include="Models\CommonModels\NOCType\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\SenateData\SenateData.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -8,16 +8,8 @@ namespace SenateData.DataModels.Common
     public class EmployeePool
     {
         public int Id { get; set; }
-
-
-        private string description;
-
-
-        private int isActive;
-
-
-        private int sortOrder;
-
+        public string Description { get; set; }
+        public bool IsActive { get; set; }
 
     }
 }

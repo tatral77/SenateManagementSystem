@@ -2,18 +2,13 @@
 using System.Collections.Generic;
 using SenateData.DataModels.Common;
 
-namespace SenateData.DataModels.Motion
+namespace SenateData.DataModels.Motions
 {
     public class Motion
     {
         public int Id { get; set; }
-        public int VersionNo { get; set; }
         public string FileNo { get; set; }
         public int WeekId { get; set; }
-        public string WeekName { get; set; }
-        public DateTime VersionDate { get; set; }
-        public int ParliamentaryYearId { get; set; }
-        public int CurrentRole { get; set; }
         public int MotionTypeId { get; set; }
         public MotionType MotionType { get; set; }
         public DateTime SubmissionDate { get; set; }
@@ -26,21 +21,15 @@ namespace SenateData.DataModels.Motion
         public DateTime MotionDiaryDate { get; set; }
         public DateTime MotionDiaryTime { get; set; }
         public int SessionNumber { get; set; }
-        public string SessionDesc { get; set; }
         public int SessionSittingsId { get; set; }
         public int TranslationType { get; set; }
         public int MotionStatusId { get; set; }
-        public string MotionStatus { get; set; }
         public int ReviewedBy { get; set; }
         public string MotionFile { get; set; }
         public string UrduText { get; set; }
-        public int VersionNumber { get; set; }
         public string Remarks { get; set; }
-        public int FileId { get; set; }
         public bool IsActive { get; set; }
-        public int IsLatestVer { get; set; }
         public int UpdatedBy { get; set; }
-        public int Decision { get; set; }
         public DateTime SubmissionApprovalDate { get; set; }
         public DateTime AdmissionDate { get; set; }
         public DateTime OrderOfDayDate { get; set; }

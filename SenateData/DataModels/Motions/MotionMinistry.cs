@@ -1,6 +1,6 @@
 ﻿using SenateData.DataModels.Common;
 
-namespace SenateData.DataModels.Motion
+namespace SenateData.DataModels.Motions
 {
     public class MotionMinistry
     {

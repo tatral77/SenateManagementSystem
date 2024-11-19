@@ -16,7 +16,6 @@
 	<ItemGroup>
 	  <Folder Include="DataModels\Legislation\" />
 	  <Folder Include="DataModels\Translation\" />
-	  <Folder Include="DataModels\Member\" />
 	</ItemGroup>
 
 </Project>

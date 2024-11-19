@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SenateData.DataModels.Question
+namespace SenateData.DataModels.Questions
 {
     public class QuestionStatus
     {

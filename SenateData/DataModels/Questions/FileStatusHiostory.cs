@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SenateData.DataModels.Question
+namespace SenateData.DataModels.Questions
 {
     public class FileStatusHiostory
 
