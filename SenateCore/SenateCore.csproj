@@ -16,11 +16,8 @@
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Models\CommonModels\MotionStatusModel\" />
-	  <Folder Include="Models\CommonModels\MotionTypeModel\" />
 	  <Folder Include="Models\CommonModels\VisitTypeModel\" />
 	  <Folder Include="Models\CommonModels\SittingTypeModel\" />
-	  <Folder Include="Models\CommonModels\ParliamentarySessionSittingModel\" />
 	  <Folder Include="Models\CommonModels\SenateUserModel\" />
 	  <Folder Include="Models\CommonModels\SeatTypeModel\" />
 	  <Folder Include="Models\CommonModels\ResolutionTypeModel\" />
@@ -31,14 +28,6 @@
 	  <Folder Include="Models\CommonModels\PostModel\" />
 	  <Folder Include="Models\CommonModels\PoliticalPartyModel\" />
 	  <Folder Include="Models\CommonModels\PhoneTypeModel\" />
-	  <Folder Include="Models\CommonModels\PenaltyTypeModel\" />
-	  <Folder Include="Models\CommonModels\PassportTypeModel\" />
-	  <Folder Include="Models\CommonModels\PartyDesignationModel\" />
-	  <Folder Include="Models\CommonModels\ParliamentaryYearModel\" />
-	  <Folder Include="Models\CommonModels\ParliamentaryTermModel\" />
-	  <Folder Include="Models\CommonModels\ParliamentaryTenureModel\" />
-	  <Folder Include="Models\CommonModels\ParliamentarySessionModel\" />
-	  <Folder Include="Models\CommonModels\NOCTypeModel\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\SenateData\SenateData.csproj" />
