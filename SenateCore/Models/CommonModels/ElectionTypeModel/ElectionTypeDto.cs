@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.ElectionTypeModel
+﻿namespace SenateCore.Models.CommonModels.ElectionTypeModel
 {
-    internal class ElectionTypeDto
+    public class ElectionTypeDto: BaseElectionTypeDto
     {
+        public int Id { get; set; }
     }
 }

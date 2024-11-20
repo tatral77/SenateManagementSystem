@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.CountryModel
+﻿namespace SenateCore.Models.CommonModels.CountryModel
 {
-    internal class CountryDto
+    public class CountryDto: BaseCountryDto
     {
+        public string CountryCode { get; set; }
+        public virtual IList<CityDto> Cities { get; set; }
     }
 }

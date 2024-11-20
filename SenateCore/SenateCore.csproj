@@ -16,20 +16,6 @@
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Models\CommonModels\VisitTypeModel\" />
-	  <Folder Include="Models\CommonModels\SittingTypeModel\" />
-	  <Folder Include="Models\CommonModels\SenateUserModel\" />
-	  <Folder Include="Models\CommonModels\SeatTypeModel\" />
-	  <Folder Include="Models\CommonModels\ResolutionTypeModel\" />
-	  <Folder Include="Models\CommonModels\ResolutionStatusModel\" />
-	  <Folder Include="Models\CommonModels\ReligionModel\" />
-	  <Folder Include="Models\CommonModels\RelationModel\" />
-	  <Folder Include="Models\CommonModels\ProvinceModel\" />
-	  <Folder Include="Models\CommonModels\PostModel\" />
-	  <Folder Include="Models\CommonModels\PoliticalPartyModel\" />
-	  <Folder Include="Models\CommonModels\PhoneTypeModel\" />
-	</ItemGroup>
-	<ItemGroup>
 	  <ProjectReference Include="..\SenateData\SenateData.csproj" />
 	</ItemGroup>
 

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.CourseTypeModel
+﻿namespace SenateCore.Models.CommonModels.CourseTypeModel
 {
-    internal class BaseCourseTypeDto
+    public class BaseCourseTypeDto
     {
+        public string Description { get; set; }
+        
     }
 }

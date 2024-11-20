@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.ConstituencyModel
+﻿namespace SenateCore.Models.CommonModels.ConstituencyModel
 {
-    internal class CreateConstituencyDto
+    public class CreateConstituencyDto:BaseConstituencyDto
     {
     }
 }

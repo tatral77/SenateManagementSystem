@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.DistrictModel
+﻿namespace SenateCore.Models.CommonModels.DistrictModel
 {
-    internal class UpdateDistrictDto
+    public class UpdateDistrictDto: BaseDistrictDto
     {
+        public int Id { get; set; }
     }
 }

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.ContractTypeModel
+﻿namespace SenateCore.Models.CommonModels.ContractTypeModel
 {
-    internal class UpdateContractTypeDto
+    public class UpdateContractTypeDto:BaseContractTypeDto
     {
+        public int Id { get; set; }
     }
 }

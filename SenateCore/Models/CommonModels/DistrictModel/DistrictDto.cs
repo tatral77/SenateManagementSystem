@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.DistrictModel
+﻿namespace SenateCore.Models.CommonModels.DistrictModel
 {
-    internal class DistrictDto
+    public class DistrictDto: BaseDistrictDto
     {
+        public int Id { get; set; }
+        public int ProvinceId { get; set; }
+        public Province Province { get; set; }
     }
 }
