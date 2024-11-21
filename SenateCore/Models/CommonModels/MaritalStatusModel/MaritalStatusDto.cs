@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SenateData.DataModels.Common;
 
 namespace SenateCore.Models.CommonModels.MaritalStatusModel
 {
-    internal class MaritalStatusDto
+    public class MaritalStatusDto: BaseMaritalStatusDto
     {
+        public int Id { get; set; }
+        public IList<SenateUserDto> SenateUser { get; set; }
     }
 }

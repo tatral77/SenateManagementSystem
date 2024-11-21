@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SenateData.DataModels.Common;
 
 namespace SenateCore.Models.CommonModels.ParliamentaryTermModel
 {
-    internal class BaseParliamentaryTermDto
+    public class BaseParliamentaryTermDto
     {
+        public string Term { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

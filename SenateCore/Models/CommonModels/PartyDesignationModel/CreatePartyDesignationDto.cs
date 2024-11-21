@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.PartyDesignationModel
+﻿namespace SenateCore.Models.CommonModels.PartyDesignationModel
 {
-    internal class CreatePartyDesignationDto
+    public class CreatePartyDesignationDto: BasePartyDesignationDto
     {
     }
 }

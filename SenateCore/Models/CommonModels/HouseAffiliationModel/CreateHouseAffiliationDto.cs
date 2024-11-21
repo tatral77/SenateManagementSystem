@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.HouseAffiliationModel
+﻿namespace SenateCore.Models.CommonModels.HouseAffiliationModel
 {
-    internal class CreateHouseAffiliationDto
+    public class CreateHouseAffiliationDto: BaseHouseAffiliationDto
     {
     }
 }

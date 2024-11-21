@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.MemberStatusModel
+﻿namespace SenateCore.Models.CommonModels.MemberStatusModel
 {
-    internal class BaseMemberStatusDto
+    public class BaseMemberStatusDto
     {
+        public string Description { get; set; }
+        public bool IsActive { get; set; }
     }
 }

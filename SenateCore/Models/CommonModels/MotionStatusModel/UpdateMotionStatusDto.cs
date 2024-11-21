@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.MotionStatusModel
+﻿namespace SenateCore.Models.CommonModels.MotionStatusModel
 {
-    internal class UpdateMotionStatusDto
+    public class UpdateMotionStatusDto: BaseMotionStatusDto
     {
+        public int Id { get; set; }
     }
 }

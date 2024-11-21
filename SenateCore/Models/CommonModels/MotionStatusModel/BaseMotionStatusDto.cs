@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SenateData.DataModels.Questions;
 
 namespace SenateCore.Models.CommonModels.MotionStatusModel
 {
-    internal class BaseMotionStatusDto
+    public class BaseMotionStatusDto
     {
+        public string Description { get; set; }
+        public bool IsActive { get; set; }
     }
 }

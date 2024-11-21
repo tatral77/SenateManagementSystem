@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.ParliamentaryYearModel
+﻿namespace SenateCore.Models.CommonModels.ParliamentaryYearModel
 {
-    internal class UpdateParliamentaryYearDto
+    public class UpdateParliamentaryYearDto: BaseParliamentaryYearDto
     {
+        public int Id { get; set; }
     }
 }

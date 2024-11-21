@@ -1,6 +1,6 @@
 ﻿namespace SenateCore.Models.CommonModels.GenderModel
 {
-    public class CreateGenderDto
+    public class CreateGenderDto: BaseGenderDto
     {
     }
 }

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SenateData.DataModels.Common;
 
 namespace SenateCore.Models.CommonModels.MinistryModel
 {
-    internal class BaseMinistryDto
+    public class BaseMinistryDto
     {
+        public string Description { get; set; }
+        public bool IsActive { get; set; }
     }
 }

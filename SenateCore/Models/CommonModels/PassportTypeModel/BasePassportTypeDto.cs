@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.PassportTypeModel
+﻿namespace SenateCore.Models.CommonModels.PassportTypeModel
 {
-    internal class BasePassportTypeDto
+    public class BasePassportTypeDto
     {
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public bool IsActive { get; set; }
     }
 }

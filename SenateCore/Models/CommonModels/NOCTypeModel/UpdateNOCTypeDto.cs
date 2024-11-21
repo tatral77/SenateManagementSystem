@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.NOCTypeModel
+﻿namespace SenateCore.Models.CommonModels.NOCTypeModel
 {
-    internal class UpdateNOCTypeDto
+    public class UpdateNOCTypeDto: BaseNOCTypeDto
     {
+        public int Id { get; set; }
     }
 }

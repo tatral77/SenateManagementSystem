@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.PenaltyTypeModel
+﻿namespace SenateCore.Models.CommonModels.PenaltyTypeModel
 {
-    internal class PenaltyTypeDto
+    public class PenaltyTypeDto: BasePenaltyTypeDto
     {
     }
 }

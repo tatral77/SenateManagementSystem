@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.PassportTypeModel
+﻿namespace SenateCore.Models.CommonModels.PassportTypeModel
 {
-    internal class UpdatePassportTypeDto
+    public class UpdatePassportTypeDto: BasePassportTypeDto
     {
+        public int Id { get; set; }
     }
 }

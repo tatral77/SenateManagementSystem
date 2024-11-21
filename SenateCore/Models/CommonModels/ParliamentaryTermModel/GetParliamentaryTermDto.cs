@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.ParliamentaryTermModel
+﻿namespace SenateCore.Models.CommonModels.ParliamentaryTermModel
 {
-    internal class GetParliamentaryTermDto
+    public class GetParliamentaryTermDto: BaseParliamentaryTermDto
     {
+        public int Id { get; set; }
     }
 }

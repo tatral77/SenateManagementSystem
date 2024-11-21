@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.MinistryModel
+﻿namespace SenateCore.Models.CommonModels.MinistryModel
 {
-    internal class CreateMinistryDto
+    public class CreateMinistryDto: BaseMinistryDto
     {
     }
 }
