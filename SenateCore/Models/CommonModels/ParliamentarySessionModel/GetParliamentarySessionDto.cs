@@ -1,6 +1,10 @@
 ﻿namespace SenateCore.Models.CommonModels.ParliamentarySessionModel
 {
+<<<<<<< HEAD
     public class GetParliamentarySessionDto: BaseParliamentarySessionDto
+=======
+    public class GetParliamentarySessionDto
+>>>>>>> 7066553944da5b9dcedd5b6e90b2f32be78e8468
     {
     }
 }

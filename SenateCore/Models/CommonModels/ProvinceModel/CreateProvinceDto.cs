@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.ProvinceModel
 {
-    internal class CreateProvinceDto
+    public class CreateProvinceDto
     {
     }
 }

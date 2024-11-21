@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.VisitTypeModel
 {
-    internal class GetVisitTypeDto
+    public class GetVisitTypeDto
     {
     }
 }

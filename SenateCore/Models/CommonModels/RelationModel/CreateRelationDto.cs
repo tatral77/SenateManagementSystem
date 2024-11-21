@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.RelationModel
 {
-    internal class CreateRelationDto
+    public class CreateRelationDto
     {
     }
 }

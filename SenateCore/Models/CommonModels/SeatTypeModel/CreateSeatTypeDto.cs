@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.SeatTypeModel
 {
-    internal class CreateSeatTypeDto
+    public class CreateSeatTypeDto
     {
     }
 }
