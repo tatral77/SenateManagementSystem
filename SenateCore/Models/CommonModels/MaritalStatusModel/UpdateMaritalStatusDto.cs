@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.MaritalStatusModel
 {
-    internal class UpdateMaritalStatusDto
+    public class UpdateMaritalStatusDto : BaseMaritalStatusDto
     {
+        public int Id { get; set; }
     }
 }

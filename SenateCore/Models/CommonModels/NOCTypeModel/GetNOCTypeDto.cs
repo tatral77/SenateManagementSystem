@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.NOCTypeModel
 {
-    internal class GetNOCTypeDto
+    public class GetNOCTypeDto
     {
     }
 }

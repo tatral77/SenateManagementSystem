@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.ParliamentaryTermModel
 {
-    internal class GetParliamentaryTermDto
+    public class GetParliamentaryTermDto
     {
     }
 }

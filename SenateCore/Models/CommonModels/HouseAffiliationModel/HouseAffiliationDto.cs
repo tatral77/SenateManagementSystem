@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.HouseAffiliationModel
 {
-    internal class HouseAffiliationDto
+    public class HouseAffiliationDto : BaseHouseAffiliationDto
     {
+        public int Id { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.ParliamentarySessionSittingModel
 {
-    internal class UpdateParliamentarySessionSittingDto
+    public class UpdateParliamentarySessionSittingDto
     {
     }
 }

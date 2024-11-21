@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.MemberStatusModel
 {
-    internal class UpdateMemberStatusDto
+    public class UpdateMemberStatusDto:BaseMemberStatusDto
     {
+        public int Id { get; set; }
     }
 }

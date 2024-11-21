@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.ResolutionStatusModel
 {
-    internal class GetResolutionStatusDto
+    public class GetResolutionStatusDto
     {
     }
 }

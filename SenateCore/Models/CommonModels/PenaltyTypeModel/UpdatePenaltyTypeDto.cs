@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.PenaltyTypeModel
 {
-    internal class UpdatePenaltyTypeDto
+    public class UpdatePenaltyTypeDto
     {
     }
 }

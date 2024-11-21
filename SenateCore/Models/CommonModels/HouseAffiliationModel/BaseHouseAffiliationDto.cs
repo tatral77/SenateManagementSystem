@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.HouseAffiliationModel
 {
-    internal class BaseHouseAffiliationDto
+    public class BaseHouseAffiliationDto
     {
+        public string Description { get; set; }
+        public bool IsActive { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.SenateUserModel
 {
-    internal class SenateUserDto
+    public class SenateUserDto
     {
     }
 }

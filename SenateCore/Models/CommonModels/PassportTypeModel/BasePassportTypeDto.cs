@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.PassportTypeModel
 {
-    internal class BasePassportTypeDto
+    public class BasePassportTypeDto
     {
     }
 }

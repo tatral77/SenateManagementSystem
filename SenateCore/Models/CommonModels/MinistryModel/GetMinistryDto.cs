@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.MinistryModel
 {
-    internal class GetMinistryDto
+    public class GetMinistryDto
     {
     }
 }

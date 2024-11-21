@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.MotionTypeModel
 {
-    internal class CreateMotionTypeDto
+    public class CreateMotionTypeDto
     {
     }
 }

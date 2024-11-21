@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.ParliamentaryTenureModel
 {
-    internal class UpdateParliamentaryTenureDto
+    public class UpdateParliamentaryTenureDto
     {
     }
 }

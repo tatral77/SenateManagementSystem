@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.PartyDesignationModel
 {
-    internal class BasePartyDesignationDto
+    public class BasePartyDesignationDto
     {
     }
 }

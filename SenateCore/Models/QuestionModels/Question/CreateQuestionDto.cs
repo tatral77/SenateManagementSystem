@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.QuestionModels.Question
 {
-    internal class CreateQuestionDto
+    public class CreateQuestionDto
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.PhoneTypeModel
 {
-    internal class CreatePhoneTypeDto
+    public class CreatePhoneTypeDto
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.MotionStatusModel
 {
-    internal class MotionStatusDto
+    public class MotionStatusDto
     {
     }
 }

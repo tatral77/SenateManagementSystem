@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.ParliamentaryYearModel
 {
-    internal class UpdateParliamentaryYearDto
+    public class UpdateParliamentaryYearDto
     {
     }
 }

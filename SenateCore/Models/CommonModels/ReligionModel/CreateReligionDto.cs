@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Models.CommonModels.ReligionModel
 {
-    internal class CreateReligionDto
+    public class CreateReligionDto
     {
     }
 }
