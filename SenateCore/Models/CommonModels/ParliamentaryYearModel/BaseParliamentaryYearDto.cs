@@ -1,6 +1,4 @@
-﻿using SenateData.DataModels.Common;
-
-namespace SenateCore.Models.CommonModels.ParliamentaryYearModel
+﻿namespace SenateCore.Models.CommonModels.ParliamentaryYearModel
 {
     public class BaseParliamentaryYearDto
     {
