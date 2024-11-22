@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.ResolutionTypeModel
+﻿namespace SenateCore.Models.CommonModels.ResolutionTypeModel
 {
-    public class UpdateResolutionTypeDto
+    public class UpdateResolutionTypeDto: BaseResolutionTypeDto
     {
+        public int Id { get; set; }
     }
 }

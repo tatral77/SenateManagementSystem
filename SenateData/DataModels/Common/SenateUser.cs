@@ -20,12 +20,5 @@
         public DateTime CNICIssuanceDate { get; set; }
         public DateTime CNICExpiryDate { get; set; }
         public bool IsEmployee { get; set; }
-     
-    
-      
-      
-
-       
-
     }
 }

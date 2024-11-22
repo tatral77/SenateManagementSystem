@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.SittingTypeModel
+﻿namespace SenateCore.Models.CommonModels.SittingTypeModel
 {
-    public class UpdateSittingTypeDto
+    public class UpdateSittingTypeDto: BaseSittingTypeDto
     {
+        public int Id { get; set; }
     }
 }

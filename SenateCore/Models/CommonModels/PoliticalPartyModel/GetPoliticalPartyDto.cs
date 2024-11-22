@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.PoliticalPartyModel
+﻿namespace SenateCore.Models.CommonModels.PoliticalPartyModel
 {
-    public class GetPoliticalPartyDto
+    public class GetPoliticalPartyDto: BasePoliticalPartyDto
     {
+        public int Id { get; set; }
     }
 }

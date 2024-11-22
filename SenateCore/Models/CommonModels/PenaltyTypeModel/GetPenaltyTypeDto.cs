@@ -2,5 +2,6 @@
 {
     public class GetPenaltyTypeDto: BasePenaltyTypeDto
     {
+        public int Id { get; set; }
     }
 }

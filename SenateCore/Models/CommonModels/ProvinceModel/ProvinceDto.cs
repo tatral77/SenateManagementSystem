@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.ProvinceModel
+﻿namespace SenateCore.Models.CommonModels.ProvinceModel
 {
-    public class ProvinceDto
+    public class ProvinceDto: BaseProvinceDto
     {
+        public int Id { get; set; }
+        public int Sortorder { get; set; }
     }
 }

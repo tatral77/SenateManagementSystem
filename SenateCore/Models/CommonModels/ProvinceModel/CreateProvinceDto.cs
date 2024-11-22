@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.ProvinceModel
+﻿namespace SenateCore.Models.CommonModels.ProvinceModel
 {
-    public class CreateProvinceDto
+    public class CreateProvinceDto: BaseProvinceDto
     {
     }
 }

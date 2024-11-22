@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.SenateUserModel
+﻿namespace SenateCore.Models.CommonModels.SenateUserModel
 {
-    public class GetSenateUserDto
+    public class GetSenateUserDto: BaseSenateUserDto
     {
     }
 }

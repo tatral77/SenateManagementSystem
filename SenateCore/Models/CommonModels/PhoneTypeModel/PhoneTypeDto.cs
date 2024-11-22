@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.PhoneTypeModel
+﻿namespace SenateCore.Models.CommonModels.PhoneTypeModel
 {
-    public class PhoneTypeDto
+    public class PhoneTypeDto: BasePhoneTypeDto
     {
+        public int Id { get; set; }
     }
 }

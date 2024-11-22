@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.RelationModel
+﻿namespace SenateCore.Models.CommonModels.RelationModel
 {
-    public class RelationDto
+    public class RelationDto: BaseRelationDto
     {
+        public int Id { get; set; }
+        public int SortOrder { get; set; }
     }
 }

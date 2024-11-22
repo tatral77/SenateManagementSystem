@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.PoliticalPartyModel
+﻿namespace SenateCore.Models.CommonModels.PoliticalPartyModel
 {
     public class BasePoliticalPartyDto
     {
+        public string PartyName { get; set; }
+        public bool IsActive { get; set; }
     }
 }

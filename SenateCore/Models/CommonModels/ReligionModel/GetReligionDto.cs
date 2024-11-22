@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.ReligionModel
+﻿namespace SenateCore.Models.CommonModels.ReligionModel
 {
-    public class GetReligionDto
+    public class GetReligionDto: BaseReligionDto
     {
+        public int Id { get; set; }
     }
 }

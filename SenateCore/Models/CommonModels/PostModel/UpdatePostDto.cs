@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Models.CommonModels.PostModel
+﻿namespace SenateCore.Models.CommonModels.PostModel
 {
-    public class UpdatePostDto
+    public class UpdatePostDto: BasePostDto
     {
+        public int Id { get; set; }
     }
 }
