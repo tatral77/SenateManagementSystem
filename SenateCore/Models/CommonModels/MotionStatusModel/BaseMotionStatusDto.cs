@@ -1,6 +1,4 @@
-﻿using SenateData.DataModels.Questions;
-
-namespace SenateCore.Models.CommonModels.MotionStatusModel
+﻿namespace SenateCore.Models.CommonModels.MotionStatusModel
 {
     public class BaseMotionStatusDto
     {
