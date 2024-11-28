@@ -2,5 +2,6 @@
 {
     public class GetSenateUserDto: BaseSenateUserDto
     {
+        public int Id { get; set; }
     }
 }

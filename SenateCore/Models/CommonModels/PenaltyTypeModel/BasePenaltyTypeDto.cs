@@ -2,7 +2,7 @@
 {
     public class BasePenaltyTypeDto
     {
-        public string PenaltyType { get; set; }
+        public string Description { get; set; }
         public int IsActive { get; set; }
     }
 }

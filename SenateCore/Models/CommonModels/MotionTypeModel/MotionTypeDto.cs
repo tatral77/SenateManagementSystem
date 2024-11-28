@@ -2,7 +2,7 @@
 {
     public class MotionTypeDto: BaseMotionTypeDto
     {
-        public int Id { get; set; }
+        public int SortOrder { get; set; }
         public IList<Motion> Motions { get; set; }
     }
 }

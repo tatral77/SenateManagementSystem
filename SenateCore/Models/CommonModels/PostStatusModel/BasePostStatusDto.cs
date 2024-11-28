@@ -1,6 +1,6 @@
-﻿namespace SenateCore.Models.CommonModels.CityModel
+﻿namespace SenateCore.Models.CommonModels.PostStatusModel
 {
-    public class BaseCityDto
+    public class BasePostStatusDto
     {
         public string Description { get; set; }
         public bool IsActive { get; set; }
