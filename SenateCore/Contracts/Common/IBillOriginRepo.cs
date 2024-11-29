@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Contracts.Common
 {
-    public interface IBasicPayScaleRepo:IGenericRepo<BasicPayScale>
+    public interface IBillOriginRepo:IGenericRepo<BillOrigin>
     {
-        Task<BasicPayScale> GetDetails(int id);
     }
 }

@@ -21,13 +21,13 @@ namespace SenateCore.Repository.Common
             this._context = context;
             this._mapper = mapper;
         }
-        //public async Task<BookingDocumentDto> GetDetails(int id)
+        //public async Task<BasicPayScale> GetDetails(int id)
         //{
-        //    var bookingDocument = await _context.BookingDocuments.Include(q => q.Booking)
+        //    var bookingDocument = await _context.BasicPayScales.Include(q => q.Booking)
         //         .FirstOrDefaultAsync(q => q.Id == id);
         //    return _mapper.Map<BookingDocumentDto>(bookingDocument);
 
         //}
-    {
+
     }
 }
