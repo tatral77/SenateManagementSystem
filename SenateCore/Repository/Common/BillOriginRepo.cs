@@ -2,12 +2,6 @@
 using SenateCore.Contracts.Common;
 using SenateData.DataModels.Common;
 using SenateData.DataModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace SenateCore.Repository.Common
 {
     public class BillOriginRepo : GenericRepo<BillOrigin>, IBillOriginRepo

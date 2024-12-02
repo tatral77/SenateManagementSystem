@@ -1,6 +1,6 @@
 ﻿namespace SenateData.DataModels.Common
 {
-    public class NOCtype
+    public class NOCType
     {
         public int Id { get; set; }
         public string Description { get; set; }

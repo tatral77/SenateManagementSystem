@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SenateCore.Contracts.Common
+﻿namespace SenateCore.Contracts.Common
 {
-    public interface IDivisionRepo
+    public interface IDivisionRepo: IGenericRepo<Division>
     {
     }
 }

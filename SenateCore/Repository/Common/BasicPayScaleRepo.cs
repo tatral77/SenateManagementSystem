@@ -1,14 +1,7 @@
 ﻿using AutoMapper;
-using SenateCore.Contracts;
 using SenateCore.Contracts.Common;
 using SenateData.DataModels;
 using SenateData.DataModels.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace SenateCore.Repository.Common
 {
     public class BasicPayScaleRepo : GenericRepo<BasicPayScale>, IBasicPayScaleRepo
