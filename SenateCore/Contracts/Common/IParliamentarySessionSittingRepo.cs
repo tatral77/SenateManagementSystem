@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Contracts.Common
 {
-    internal interface IParliamentarySessionSittingRepo
+    public interface IParliamentarySessionSittingRepo
     {
     }
 }

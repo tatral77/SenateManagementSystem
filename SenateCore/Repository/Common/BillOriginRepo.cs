@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Repository.Common
 {
-    internal class BillOriginRepo : GenericRepo<BillOrigin>, IBillOriginRepo
+    public class BillOriginRepo : GenericRepo<BillOrigin>, IBillOriginRepo
     {
         private readonly SenateDBContext _context;
         private readonly IMapper _mapper;

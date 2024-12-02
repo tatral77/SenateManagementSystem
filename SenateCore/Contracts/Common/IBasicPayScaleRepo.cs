@@ -9,6 +9,6 @@ namespace SenateCore.Contracts.Common
 {
     public interface IBasicPayScaleRepo:IGenericRepo<BasicPayScale>
     {
-        Task<BasicPayScale> GetDetails(int id);
+        //Task<BasicPayScale> GetDetails(int id);
     }
 }

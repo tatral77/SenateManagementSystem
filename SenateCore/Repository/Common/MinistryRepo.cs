@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.Repository.Common
 {
-    internal class MinistryRepo
+    public class MinistryRepo
     {
     }
 }
