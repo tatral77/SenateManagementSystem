@@ -5,7 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SenateCore.Configurations;
+using SenateCore.Contracts;
+using SenateCore.Contracts.Common;
 using SenateCore.Middleware;
+using SenateCore.Repository;
+using SenateCore.Repository.Common;
 using SenateData.DataModels;
 using SenateData.DataModels.Auth;
 using Serilog;
@@ -99,6 +103,35 @@ builder.Host.UseSerilog((context, loggerConfiguration) =>
 #endregion
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
+#region Contracts
+builder.Services.AddScoped(typeof(IGenericRepo<>), typeof(GenericRepo<>));
+builder.Services.AddScoped<IBasicPayScaleRepo, BasicPayScaleRepo>();
+builder.Services.AddScoped<IBillOriginRepo, BillOriginRepo>();
+builder.Services.AddScoped<IBillStatusRepo, BillStatusRepo>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>(); 
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+
+builder.Services.AddScoped<,>(); 
+builder.Services.AddScoped<,>();
+
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+builder.Services.AddScoped<,>();
+#endregion
 // Add services to the container.
 
 #region JWT
