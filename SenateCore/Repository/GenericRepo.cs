@@ -5,12 +5,6 @@ using SenateCore.Contracts;
 using SenateCore.Exceptions;
 using SenateCore.Models;
 using SenateData.DataModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace SenateCore.Repository
 {
     public class GenericRepo<T> : IGenericRepo<T> where T : class
