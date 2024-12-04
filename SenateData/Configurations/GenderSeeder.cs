@@ -9,7 +9,7 @@ using SenateData.DataModels.Common;
 
 namespace APIData.Data.Configurations
 {
-    internal class GenderConf : IEntityTypeConfiguration<Gender>
+    public class GenderSeeder : IEntityTypeConfiguration<Gender>
     {
         public void Configure(EntityTypeBuilder<Gender> builder)
         {

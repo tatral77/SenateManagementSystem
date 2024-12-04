@@ -14,8 +14,8 @@
         public MaritalStatus MaritalStatus { get; set; }
         public int CityId { get; set; }
         public City City { get; set; }
-        public int ProvinceId { get; set; }
-        public Province Province { get; set; }
+        //public int ProvinceId { get; set; }
+        //public Province Province { get; set; }
         public string CNIC { get; set; }
         public DateTime CNICIssuanceDate { get; set; }
         public DateTime CNICExpiryDate { get; set; }

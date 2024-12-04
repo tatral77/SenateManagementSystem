@@ -57,6 +57,7 @@ namespace SenateData.DataModels
         public DbSet<PoliticalParty> PoliticalParties { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Province> Provinces { get; set; }
+        public DbSet<ProvinceDivision> ProvinceDivisions { get; set; }
         public DbSet<Relation> Relations { get; set; }
         public DbSet<Religion> Religions { get; set; }
         public DbSet<ResolutionStatus> ResolutionStatuses { get; set; }
