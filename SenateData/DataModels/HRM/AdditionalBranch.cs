@@ -9,6 +9,6 @@ namespace EstablishmentENT
         public int SystemUsersId { get; set; }
         public int PostingId { get; set; }
         public int AdditionalBranchesId { get; set; }
-        public string AdditionalBranch { get; set; }
+        public string Branch { get; set; }
     }
 }

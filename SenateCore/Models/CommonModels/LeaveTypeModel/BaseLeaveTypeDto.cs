@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace EstablishmentENT
+namespace SenateCore.Models.CommonModels.LeaveTypeModel
 {
-    public class CurrentStatus
+    public class BaseLeaveTypeDto
     {
-        public int Id { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; }
     }

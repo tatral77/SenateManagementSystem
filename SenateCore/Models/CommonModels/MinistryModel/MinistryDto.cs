@@ -1,4 +1,6 @@
-﻿namespace SenateCore.Models.CommonModels.MinistryModel
+﻿using SenateData.DataModels.Common;
+
+namespace SenateCore.Models.CommonModels.MinistryModel
 {
     public class MinistryDto: BaseMinistryDto
     {

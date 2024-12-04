@@ -1,4 +1,6 @@
-﻿namespace SenateCore.Models.CommonModels.MotionTypeModel
+﻿using SenateData.DataModels.Motions;
+
+namespace SenateCore.Models.CommonModels.MotionTypeModel
 {
     public class MotionTypeDto: BaseMotionTypeDto
     {

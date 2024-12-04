@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SenateData.DataModels.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace SenateData.DataModels.Notice
         public int MemberId { get; set; }
         public DateTime LeaveAppliedFrom { get; set; }
         public DateTime LeaveAppliedTo { get; set; }
-        public AssemblySessions SessionNumber { get; set; }
+        public ParliamentarySession ParliamentarySession { get; set; }
         public int SessionSittingId { get; set; }
         public DateTime CalledInHouseOn { get; set; }
         public string Purpose { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace SenateCore.Models.CommonModels.DistrictModel
+﻿using SenateData.DataModels.Common;
+
+namespace SenateCore.Models.CommonModels.DistrictModel
 {
     public class DistrictDto: BaseDistrictDto
     {

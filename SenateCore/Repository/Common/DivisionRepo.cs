@@ -4,7 +4,7 @@ using SenateData.DataModels;
 using SenateData.DataModels.Common;
 namespace SenateCore.Repository.Common
 {
-    public class DivisionRepo : GenericRepo<Division>, IDivisionRepo
+    public class DivisionRepo : GenericRepo<MinistryDivision>, IDivisionRepo
     {
         private readonly SenateDBContext _context;
         private readonly IMapper _mapper;

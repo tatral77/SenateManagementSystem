@@ -1,4 +1,6 @@
-﻿namespace SenateCore.Models.CommonModels.MaritalStatusModel
+﻿using SenateCore.Models.CommonModels.SenateUserModel;
+
+namespace SenateCore.Models.CommonModels.MaritalStatusModel
 {
     public class MaritalStatusDto: BaseMaritalStatusDto
     {

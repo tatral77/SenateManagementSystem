@@ -1,4 +1,6 @@
-﻿namespace SenateCore.Models.CommonModels.ParliamentaryTermModel
+﻿using SenateData.DataModels.Common;
+
+namespace SenateCore.Models.CommonModels.ParliamentaryTermModel
 {
     public class ParliamentaryTermDto: BaseParliamentaryTermDto
     {

@@ -1,4 +1,6 @@
-﻿namespace SenateCore.Models.CommonModels.CityModel
+﻿using SenateData.DataModels.Common;
+
+namespace SenateCore.Models.CommonModels.CityModel
 {
     public class CityDto:BaseCityDto
     {

@@ -1,6 +1,8 @@
-﻿namespace SenateCore.Contracts.Common
+﻿using SenateData.DataModels.Common;
+
+namespace SenateCore.Contracts.Common
 {
-    public interface IDivisionRepo: IGenericRepo<Division>
+    public interface IDivisionRepo: IGenericRepo<MinistryDivision>
     {
     }
 }

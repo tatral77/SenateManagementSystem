@@ -1,4 +1,6 @@
-﻿namespace SenateCore.Models.CommonModels.MotionStatusModel
+﻿using SenateCore.Models.QuestionModels.Question;
+
+namespace SenateCore.Models.CommonModels.MotionStatusModel
 {
     public class MotionStatusDto: BaseMotionStatusDto
     {

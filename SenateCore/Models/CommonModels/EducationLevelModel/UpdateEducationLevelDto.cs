@@ -1,6 +1,6 @@
 ﻿namespace SenateCore.Models.CommonModels.EducationLevelModel
 {
-    public class EducationalLevelDto: BaseEducationalLevelDto
+    public class UpdateEducationLevelDto: BaseEducationLevelDto
     {
         public int Id { get; set; }
     }

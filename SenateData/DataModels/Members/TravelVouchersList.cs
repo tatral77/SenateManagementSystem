@@ -7,7 +7,7 @@ namespace SenateData.DataModels.Member
     {
         public int Id { get; set; }
         public int FinancialYearId { get; set; }
-        public FinancialYears FinancialYear { get; set; }
+        //public FinancialYears FinancialYear { get; set; }
         public int Quantity { get; set; }
         public string StartSerialNumber { get; set; }
         public string EndSerialNumber { get; set; }

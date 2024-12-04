@@ -1,4 +1,6 @@
-﻿namespace SenateCore.Models.CommonModels.GenderModel
+﻿using SenateCore.Models.CommonModels.SenateUserModel;
+
+namespace SenateCore.Models.CommonModels.GenderModel
 {
     public class GenderDto: BaseGenderDto
     {

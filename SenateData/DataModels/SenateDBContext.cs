@@ -1,6 +1,7 @@
 ﻿using EstablishmentENT;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SenateData.Common;
 using SenateData.DataModels.Auth;
 using SenateData.DataModels.Common;
 using System;
@@ -44,7 +45,7 @@ namespace SenateData.DataModels
         public DbSet<Ministry> Ministries { get; set; }
         public DbSet<MotionStatus> MotionStatuses { get; set; }
         public DbSet<MotionType> MotionTypes { get; set; }
-        public DbSet<NOCtype> NOCtypes { get; set; }
+        public DbSet<NOCType> NOCtypes { get; set; }
         public DbSet<ParliamentarySession> ParliamentarySessions { get; set; }
         public DbSet<ParliamentaryTenure> ParliamentaryTenures { get; set; }
         public DbSet<ParliamentaryTerm> ParliamentaryTerms { get; set; }

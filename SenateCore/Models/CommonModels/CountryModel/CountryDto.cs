@@ -1,4 +1,6 @@
-﻿namespace SenateCore.Models.CommonModels.CountryModel
+﻿using SenateCore.Models.CommonModels.CityModel;
+
+namespace SenateCore.Models.CommonModels.CountryModel
 {
     public class CountryDto: BaseCountryDto
     {

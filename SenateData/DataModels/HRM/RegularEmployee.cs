@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EstablishmentENT
 {
-    public class RegularEmployee:EmpHistory
+    public class RegularEmployee
     {
         public DateTime ProbationTo { get; set; }
         public DateTime ProbationFrom { get; set; }

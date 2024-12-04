@@ -1,5 +1,52 @@
 ﻿using AutoMapper;
-using SenateCore.Models.CommonModels.BasicPayScale;
+using EstablishmentENT;
+using SenateCore.Models.CommonModels.BasicPayScaleModel;
+using SenateCore.Models.CommonModels.BillOriginModel;
+using SenateCore.Models.CommonModels.BillStatusModel;
+using SenateCore.Models.CommonModels.BillTypeModel;
+using SenateCore.Models.CommonModels.BranchModel;
+using SenateCore.Models.CommonModels.CityModel;
+using SenateCore.Models.CommonModels.ConstituencyModel;
+using SenateCore.Models.CommonModels.ContractTypeModel;
+using SenateCore.Models.CommonModels.CountryModel;
+using SenateCore.Models.CommonModels.CourseTypeModel;
+using SenateCore.Models.CommonModels.DistrictModel;
+using SenateCore.Models.CommonModels.DivisionModel;
+using SenateCore.Models.CommonModels.EducationLevelModel;
+using SenateCore.Models.CommonModels.ElectionTypeModel;
+using SenateCore.Models.CommonModels.GenderModel;
+using SenateCore.Models.CommonModels.HouseAffiliationModel;
+using SenateCore.Models.CommonModels.LeaveTypeModel;
+using SenateCore.Models.CommonModels.MaritalStatusModel;
+using SenateCore.Models.CommonModels.MemberStatusModel;
+using SenateCore.Models.CommonModels.MinistryModel;
+using SenateCore.Models.CommonModels.MotionStatusModel;
+using SenateCore.Models.CommonModels.MotionTypeModel;
+using SenateCore.Models.CommonModels.NOCTypeModel;
+using SenateCore.Models.CommonModels.ParliamentarySessionModel;
+using SenateCore.Models.CommonModels.ParliamentarySessionSittingModel;
+using SenateCore.Models.CommonModels.ParliamentaryTenureModel;
+using SenateCore.Models.CommonModels.ParliamentaryTermModel;
+using SenateCore.Models.CommonModels.ParliamentaryYearModel;
+using SenateCore.Models.CommonModels.PartyDesignationModel;
+using SenateCore.Models.CommonModels.PassportTypeModel;
+using SenateCore.Models.CommonModels.PenaltyTypeModel;
+using SenateCore.Models.CommonModels.PhoneTypeModel;
+using SenateCore.Models.CommonModels.PoliticalPartyModel;
+using SenateCore.Models.CommonModels.PostModel;
+using SenateCore.Models.CommonModels.PostStatusModel;
+using SenateCore.Models.CommonModels.PostTypeModel;
+using SenateCore.Models.CommonModels.ProbationTypeModel;
+using SenateCore.Models.CommonModels.ProvinceModel;
+using SenateCore.Models.CommonModels.RelationModel;
+using SenateCore.Models.CommonModels.ReligionModel;
+using SenateCore.Models.CommonModels.ResolutionStatusModel;
+using SenateCore.Models.CommonModels.ResolutionTypeModel;
+using SenateCore.Models.CommonModels.SeatTypeModel;
+using SenateCore.Models.CommonModels.SenateUserModel;
+using SenateCore.Models.CommonModels.SittingTypeModel;
+using SenateCore.Models.CommonModels.VisitTypeModel;
+using SenateData.Common;
 using SenateData.DataModels.Common;
 using System;
 using System.Collections.Generic;
@@ -339,3 +386,4 @@ namespace SenateCore.Configurations
 
         }
     }
+}

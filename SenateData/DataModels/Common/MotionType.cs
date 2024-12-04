@@ -1,4 +1,6 @@
-﻿namespace SenateData.DataModels.Common
+﻿using SenateData.DataModels.Motions;
+
+namespace SenateData.DataModels.Common
 {
     public class MotionType
     {

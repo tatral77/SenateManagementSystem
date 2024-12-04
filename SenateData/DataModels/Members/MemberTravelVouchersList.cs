@@ -8,7 +8,7 @@
         public int FinancialYearId { get; set; }
         public int TravelVoucherSubTypeId { get; set; }
         public string TravelVoucherSubType { get; set; }
-        public FinancialYears FinancialYear { get; set; }
+       // public FinancialYears FinancialYear { get; set; }
         public DateTime Fromdate { get; set; }
         public DateTime ToDate { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EstablishmentENT;
 using SenateCore.Contracts.Common;
+using SenateData.Common;
 using SenateData.DataModels;
 using SenateData.DataModels.Common;
 namespace SenateCore.Repository.Common
