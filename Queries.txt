@@ -1,0 +1,30 @@
+Data Seeding
+
+DECLARE @ID as INT;
+DECLARE @Description as VARCHAR(MAx);
+DECLARE @IS_Active as INT;
+DECLARE @IPR_CATEGORY_ID as INT;
+declare @msg varchar(max)
+declare @object varchar(max)
+DECLARE @BusinessCursor as CURSOR;
+
+SET @BusinessCursor = CURSOR FOR
+SELECT * from BILL_STATUSES
+
+OPEN @BusinessCursor;
+    FETCH NEXT FROM @BusinessCursor INTO @ID,@Description,@IS_Active;
+    WHILE @@FETCH_STATUS = 0
+        BEGIN
+            SET @msg ='new BillStatus {'
+			SET @msg += 'Id= ' + CONVERT(varchar(10), @ID) +','
+            SET @msg += 'Description= "'+CONVERT(varchar(Max), @Description) +'",'
+				IF(@IS_Active=1)
+                  SET @msg += 'IsActive=true' 
+				 ELSE  
+				  SET @msg += 'IsActive=false'
+              SET @msg +='},'
+            
+			
+        print @msg
+    FETCH NEXT FROM @BusinessCursor INTO @ID,@Description,@IS_Active;
+END
