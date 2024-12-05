@@ -104,7 +104,9 @@ builder.Host.UseSerilog((context, loggerConfiguration) =>
 #endregion
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
+
 #region Contracts
+
 builder.Services.AddScoped(typeof(IGenericRepo<>), typeof(GenericRepo<>));
 builder.Services.AddScoped<IBasicPayScaleRepo, BasicPayScaleRepo>();
 builder.Services.AddScoped<IBillOriginRepo, BillOriginRepo>();
@@ -153,6 +155,7 @@ builder.Services.AddScoped<ISittingTypeRepo, SittingTypeRepo>();
 builder.Services.AddScoped<IVisitTypeRepo, VisitTypeRepo>();
 
 #endregion
+
 // Add services to the container.
 
 #region JWT
