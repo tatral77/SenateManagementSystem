@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using SenateData.DataModels.Common;
 namespace SenateData.Configurations
 {
-    public class ParliamentaryTenureSeeder
+    public class ParliamentaryTenureSeeder: IEntityTypeConfiguration<ParliamentaryTenure>
     {
+        public void Configure(EntityTypeBuilder<ParliamentaryTenure> builder)
+        {
+            builder.HasData(
+                );
+        }
     }
 }

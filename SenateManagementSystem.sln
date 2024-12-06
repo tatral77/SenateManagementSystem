@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SenateData", "SenateData\Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SenateCoreAPI", "SenateCoreAPI\SenateCoreAPI.csproj", "{A5C98221-9629-49D7-972E-BA1327D98354}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QMS", "QMS\QMS.csproj", "{68036069-4E56-4B50-8DD1-D5B4E0FB0B9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QMS", "QMS\QMS.csproj", "{68036069-4E56-4B50-8DD1-D5B4E0FB0B9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -28,11 +28,9 @@
 		<PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
 		<PackageReference Include="Serilog.Expressions" Version="5.0.0" />
 		<PackageReference Include="Serilog.Sinks.Seq" Version="8.0.0" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\SenateCore\SenateCore.csproj" />
-	  <ProjectReference Include="..\SenateData\SenateData.csproj" />
 	</ItemGroup>
 
 </Project>
