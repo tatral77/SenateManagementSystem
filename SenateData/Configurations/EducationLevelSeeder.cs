@@ -21,7 +21,6 @@ namespace SenateData.Configurations
                         new EducationLevel { Id = 11, Description = "MBBS", IsActive = true, SortOrder = 3, },
                         new EducationLevel { Id = 12, Description = "Primary", IsActive = true, SortOrder = 8, },
                         new EducationLevel { Id = 13, Description = "Middle", IsActive = true, SortOrder = 8, }
-
                 );
         }
     }

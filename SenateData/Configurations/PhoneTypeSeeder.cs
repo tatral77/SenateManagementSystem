@@ -9,6 +9,10 @@ namespace SenateData.Configurations
         public void Configure(EntityTypeBuilder<PhoneType> builder)
         {
             builder.HasData(
+                new PhoneType { Id = 1, Description = "Residence", IsActive = true, },
+                new PhoneType { Id = 2, Description = "Office", IsActive = true, },
+                new PhoneType { Id = 3, Description = "Mobile", IsActive = true, },
+                new PhoneType { Id = 4, Description = "Fax", IsActive = true, }
                 );
         }
     }
