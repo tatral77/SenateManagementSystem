@@ -141,6 +141,7 @@ builder.Services.AddScoped<IPenaltyTypeRepo, PenaltyTypeRepo>();
 builder.Services.AddScoped<IPhoneTypeRepo, PhoneTypeRepo>();
 builder.Services.AddScoped<IPoliticalPartyRepo, PoliticalPartyRepo>();
 builder.Services.AddScoped<IPostRepo, PostRepo>();
+//builder.Services.AddScoped<IPostSubTypeRepo, PostSubType>();
 builder.Services.AddScoped<IPostStatusRepo, PostStatusRepo>();
 builder.Services.AddScoped<IPostTypeRepo, PostTypeRepo>();
 builder.Services.AddScoped<IProbationTypeRepo, ProbationTypeRepo>();

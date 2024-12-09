@@ -1,5 +1,4 @@
 ﻿using SenateCore.IServices;
-using SenateCore.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +12,10 @@ namespace SenateCore.Services
     public class BasicPayScaleService:IBasicPayScaleService
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly ICommonUtilities _commonUtilities;
+        private readonly ICommonUtils _commonUtilities;
         private string APIUrl;
         
-        public BasicPayScaleService(IHttpClientFactory httpClientFactory,ICommonUtilities commonUtilities)
+        public BasicPayScaleService(IHttpClientFactory httpClientFactory,ICommonUtils commonUtilities)
         {
             _httpClientFactory = httpClientFactory;
             _commonUtilities = commonUtilities;

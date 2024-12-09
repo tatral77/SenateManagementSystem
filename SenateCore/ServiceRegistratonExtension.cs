@@ -7,7 +7,7 @@ using SenateCore.Contracts.Common;
 using SenateCore.IServices;
 using SenateCore.Repository;
 using SenateCore.Repository.Common;
-using SenateCore.Utils;
+using SenateCore.Services;
 using SenateData.DataModels;
 using System;
 using System.Collections.Generic;

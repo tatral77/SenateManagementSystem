@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SenateCore.Utils
+namespace SenateCore.Services
 {
-    public class CommonUtilities:ICommonUtilities
+    public class CommonUtils : ICommonUtils
     {
         public string GetAPIUrl()
         {

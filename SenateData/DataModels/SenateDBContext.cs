@@ -71,6 +71,9 @@ namespace SenateData.DataModels
         public DbSet<PhoneType> PhoneTypes { get; set; }
         public DbSet<PoliticalParty> PoliticalParties { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<PostStatus> PostStatuses { get; set; }
+        public DbSet<PostSubType> PostSubTypes { get; set; }
+        public DbSet<PostType> postTypes { get; set; }
         public DbSet<Province> Provinces { get; set; }
         public DbSet<ProvinceDivision> ProvinceDivisions { get; set; }
         public DbSet<Relation> Relations { get; set; }

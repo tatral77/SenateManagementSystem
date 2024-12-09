@@ -7,8 +7,8 @@ namespace SenateData.Configurations
     {
         public void Configure(EntityTypeBuilder<BillStatus> builder)
         {
-            builder.HasData(
-                );
+            //builder.HasData(
+            //    );
        }
     }
 }

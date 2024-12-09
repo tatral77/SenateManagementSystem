@@ -35,6 +35,7 @@ using SenateCore.Models.CommonModels.PhoneTypeModel;
 using SenateCore.Models.CommonModels.PoliticalPartyModel;
 using SenateCore.Models.CommonModels.PostModel;
 using SenateCore.Models.CommonModels.PostStatusModel;
+using SenateCore.Models.CommonModels.PostSubTypeModel;
 using SenateCore.Models.CommonModels.PostTypeModel;
 using SenateCore.Models.CommonModels.ProbationTypeModel;
 using SenateCore.Models.CommonModels.ProvinceModel;
@@ -297,6 +298,13 @@ namespace SenateCore.Configurations
             CreateMap<PostStatus, GetPostStatusDto>().ReverseMap();
             CreateMap<PostStatus, BasePostStatusDto>().ReverseMap();
             CreateMap<PostStatus, PostStatusDto>().ReverseMap();
+            #endregion
+            #region PostSubType
+            CreateMap<PostSubType, CreatePostSubTypeDto>().ReverseMap();
+            CreateMap<PostSubType, UpdatePostSubTypeDto>().ReverseMap();
+            CreateMap<PostSubType, GetPostSubTypeDto>().ReverseMap();
+            CreateMap<PostSubType, BasePostSubTypeDto>().ReverseMap();
+            CreateMap<PostSubType, PostSubTypeDto>().ReverseMap();
             #endregion
             #region PostType
             CreateMap<PostType, CreatePostTypeDto>().ReverseMap();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SenateCore.IServices
 {
-    public interface ICommonUtilities
+    public interface ICommonUtils
     {
         string GetAPIUrl();
     }
