@@ -2,7 +2,7 @@
 {
     public class BaseBasicPayScaleDto
     {
-        public int Description { get; set; }
+        public string Description { get; set; }
         public bool IsActive { get; set; }
        
     }

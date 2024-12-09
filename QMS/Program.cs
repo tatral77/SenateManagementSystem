@@ -1,6 +1,13 @@
+using SenateCore.Contracts.Common;
+using SenateCore.IServices;
+using SenateCore.Repository.Common;
+using SenateCore.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<IBasicPayScaleService, BasicPayScaleService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualStudio.Web.CodeGeneration;
 using SenateCore.Contracts;
 using SenateCore.Contracts.Common;
+using SenateCore.IServices;
 using SenateCore.Repository;
 using SenateCore.Repository.Common;
+using SenateCore.Utils;
 using SenateData.DataModels;
 using System;
 using System.Collections.Generic;
@@ -22,6 +25,7 @@ namespace SenateCore
             string connectionString = "Data Source=172.16.15.8;packet size=4096;user id=sa;pwd=X#Bv7_4qT!Ma;Trusted_Connection=False;TrustServerCertificate=True;initial catalog=TravellingAPI";
             services.AddDbContext<SenateDBContext>(options => options.UseSqlServer(connectionString));
             #region Contracts
+            services.AddScoped<ICommonUtils, CommonUtils>();
             services.AddScoped(typeof(IGenericRepo<>), typeof(GenericRepo<>));
             services.AddScoped<IBasicPayScaleRepo, BasicPayScaleRepo>();
             return services;

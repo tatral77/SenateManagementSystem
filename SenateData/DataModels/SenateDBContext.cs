@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SenateData.Common;
+using SenateData.Configurations;
 using SenateData.DataModels.Auth;
 using SenateData.DataModels.Common;
 using System;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace SenateData.DataModels
 {
-    public class SenateDBContext : IdentityDbContext<APIUser>
+    public class SenateDBContext : IdentityDbContext<ApplicationUser>
     {
         public SenateDBContext(DbContextOptions options) : base(options)
         {
@@ -23,7 +24,21 @@ namespace SenateData.DataModels
             base.OnModelCreating(modelBuilder);
             {
             }
+            #region Configurations
+            modelBuilder.ApplyConfiguration(new BasicPayScaleSeeder());
+            //modelBuilder.ApplyConfiguration(new BookingTypeConfiguration());
+            //modelBuilder.ApplyConfiguration(new PaymentMethodConfiguration());
+            //modelBuilder.ApplyConfiguration(new PaymentStatusConfiguration());
+            //modelBuilder.ApplyConfiguration(new VehicleMakeConfiguration());
+            //modelBuilder.ApplyConfiguration(new VehicleTypeConfiguration());
+            //modelBuilder.ApplyConfiguration(new VehicleMaintenanceTypeConfiguration());
+            //modelBuilder.ApplyConfiguration(new VehiclePeriodicalExpenseTypeConfiguration());
+            #endregion
         }
+
+
+
+
         #region Common
         public DbSet<BasicPayScale> BasicPayScales { get; set; }
         public DbSet<BillStatus> BillStatuses { get; set; }

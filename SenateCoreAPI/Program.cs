@@ -23,9 +23,9 @@ builder.Services.AddDbContext<SenateDBContext>(options => options.UseSqlServer(c
 #endregion
 
 #region IDENTITY
-builder.Services.AddIdentityCore<APIUser>()
+builder.Services.AddIdentityCore<ApplicationUser>()
     .AddRoles<IdentityRole>()
-    .AddTokenProvider<DataProtectorTokenProvider<APIUser>>("TravellingApi")
+    .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>("TravellingApi")
     .AddEntityFrameworkStores<SenateDBContext>()
     .AddDefaultTokenProviders();
 #endregion
