@@ -1,6 +1,16 @@
 ﻿@{
-    var apiData = ViewData["ApiData"];
+    var student = ViewData["basicPayScaleDtos"] as IEnumerable<SenateCore.Models.CommonModels.BasicPayScaleModel.GetBasicPayScaleDto>;
 }
 
-<h1>API Data:</h1>
-<p>@apiData</p>
+
+@{
+    Layout = null;
+
+foreach (var item in student)
+{
+
+@item.Description
+<br />
+
+}
+}

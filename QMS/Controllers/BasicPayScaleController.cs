@@ -1,22 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SenateCore.IServices;
-using SenateCore.Services;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using SenateCore.Contracts.Common;
+
+using SenateCore.Models.CommonModels.BasicPayScaleModel;
+
+using SenateData.DataModels.Common;
+using System.Reflection;
 
 namespace QMS.Controllers
 {
     public class BasicPayScaleController : Controller
     {
-        private readonly IBasicPayScaleService _basicPayScaleService;
-        public BasicPayScaleController(IBasicPayScaleService basicPayScaleService)
+        private readonly IBasicPayScaleRepo _basicPayScaleRepo;
+        public BasicPayScaleController(IBasicPayScaleRepo basicPayScaleRepo)
         {
-            _basicPayScaleService = basicPayScaleService;
+            _basicPayScaleRepo = basicPayScaleRepo;
         }
 
         public async Task<IActionResult>  Index()
         {
-            var apiData = await _basicPayScaleService.GetBasicPayScaleAsync();
-            ViewData["ApiData"] = apiData;  // Passing data to the view
-            return View();
+            List<GetBasicPayScaleDto> basicPayScaleDtos = await _basicPayScaleRepo.GetAllAsync<GetBasicPayScaleDto>();
+            ViewData["basicPayScaleDtos"] = basicPayScaleDtos;
+            return View(basicPayScaleDtos);
         }
     }
 }
