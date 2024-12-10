@@ -12,15 +12,15 @@ using SenateData.DataModels;
 namespace SenateData.Migrations
 {
     [DbContext(typeof(SenateDBContext))]
-    [Migration("20241207164014_seeding")]
-    partial class seeding
+    [Migration("20241210102612_Schema Changed2")]
+    partial class SchemaChanged2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -260,14 +260,15 @@ namespace SenateData.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.ToTable("BasicPayScales");
+                    b.ToTable("BasicPayScale", "HRM");
 
                     b.HasData(
                         new
@@ -479,10 +480,8 @@ namespace SenateData.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("DistrictId")
-                        .HasColumnType("int");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("DivisionId")
                         .HasColumnType("int");
@@ -496,8 +495,6 @@ namespace SenateData.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CountryId");
-
-                    b.HasIndex("DistrictId");
 
                     b.ToTable("Cities");
                 });
@@ -1243,6 +1240,25 @@ namespace SenateData.Migrations
                     b.ToTable("Posts");
                 });
 
+            modelBuilder.Entity("SenateData.DataModels.Common.PostStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PostStatuses");
+                });
+
             modelBuilder.Entity("SenateData.DataModels.Common.PostSubType", b =>
                 {
                     b.Property<int>("Id")
@@ -1259,7 +1275,7 @@ namespace SenateData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PostSubType");
+                    b.ToTable("PostSubTypes");
                 });
 
             modelBuilder.Entity("SenateData.DataModels.Common.PostType", b =>
@@ -1278,7 +1294,7 @@ namespace SenateData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PostType");
+                    b.ToTable("postTypes");
                 });
 
             modelBuilder.Entity("SenateData.DataModels.Common.Province", b =>
@@ -1377,14 +1393,15 @@ namespace SenateData.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ResolutionStatuses");
+                    b.ToTable("ResolutionStatus", "Resolution");
                 });
 
             modelBuilder.Entity("SenateData.DataModels.Common.ResolutionType", b =>
@@ -1576,13 +1593,7 @@ namespace SenateData.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SenateData.DataModels.Common.District", "District")
-                        .WithMany()
-                        .HasForeignKey("DistrictId");
-
                     b.Navigation("Country");
-
-                    b.Navigation("District");
                 });
 
             modelBuilder.Entity("SenateData.DataModels.Common.District", b =>

@@ -5,12 +5,22 @@
 
 @{
     Layout = null;
-
-foreach (var item in student)
+<table>
+<thead>
+<tr>
+<th>Id</th>
+                <th>Description</th>
+</tr>
+</thead>
+@foreach (var item in student)
 {
+<tr>
+            <td>@item.Id</td>
+            <td>@item.Description</td>
+</tr>
 
-@item.Description
-<br />
+
 
 }
+    </table>
 }

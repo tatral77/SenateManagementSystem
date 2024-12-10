@@ -12,15 +12,15 @@ using SenateData.DataModels;
 namespace SenateData.Migrations
 {
     [DbContext(typeof(SenateDBContext))]
-    [Migration("20241204111923_init")]
-    partial class init
+    [Migration("20241210084408_Schema Changed")]
+    partial class SchemaChanged
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -180,7 +180,7 @@ namespace SenateData.Migrations
                     b.ToTable("PenaltyTypes");
                 });
 
-            modelBuilder.Entity("SenateData.DataModels.Auth.APIUser", b =>
+            modelBuilder.Entity("SenateData.DataModels.Auth.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -259,8 +259,9 @@ namespace SenateData.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Description")
-                        .HasColumnType("int");
+                    b.Property<string>("Description")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -268,6 +269,146 @@ namespace SenateData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BasicPayScales");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "BS-1",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "BS-2",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "BS-3",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "BS-4",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "BS-5",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "BS-6",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "BS-7",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "BS-8",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "BS-9",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "BS-10",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Description = "BS-11",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Description = "BS-12",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Description = "BS-13",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Description = "BS-14",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Description = "BS-15",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Description = "BS-16",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Description = "BS-17",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Description = "BS-18",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Description = "BS-19",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Description = "BS-20",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Description = "BS-21",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Description = "BS-22",
+                            IsActive = true
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Description = "Not Mentioned",
+                            IsActive = true
+                        });
                 });
 
             modelBuilder.Entity("SenateData.DataModels.Common.BillStatus", b =>
@@ -339,10 +480,8 @@ namespace SenateData.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("DistrictId")
-                        .HasColumnType("int");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("DivisionId")
                         .HasColumnType("int");
@@ -350,11 +489,12 @@ namespace SenateData.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsDistrict")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CountryId");
-
-                    b.HasIndex("DistrictId");
 
                     b.ToTable("Cities");
                 });
@@ -473,6 +613,9 @@ namespace SenateData.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("EducationLevels");
@@ -495,6 +638,25 @@ namespace SenateData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ElectionTypes");
+                });
+
+            modelBuilder.Entity("SenateData.DataModels.Common.EmployeePool", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeePool");
                 });
 
             modelBuilder.Entity("SenateData.DataModels.Common.Gender", b =>
@@ -1004,6 +1166,88 @@ namespace SenateData.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("AppointmentModeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BPSFrom")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BPSTo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EmployeePoolId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EmployeePoolsId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsGazetted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("JobDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JobExperience")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NumberOfPosts")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PermanentPosts")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PostStatusId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PostSubTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PostTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RequiredQualification")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("SanctionDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SanctionNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TemporaryPosts")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpgradationDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeePoolId");
+
+                    b.HasIndex("PostSubTypeId");
+
+                    b.HasIndex("PostTypeId");
+
+                    b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("SenateData.DataModels.Common.PostStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -1012,7 +1256,45 @@ namespace SenateData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Posts");
+                    b.ToTable("PostStatuses");
+                });
+
+            modelBuilder.Entity("SenateData.DataModels.Common.PostSubType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PostSubTypes");
+                });
+
+            modelBuilder.Entity("SenateData.DataModels.Common.PostType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("postTypes");
                 });
 
             modelBuilder.Entity("SenateData.DataModels.Common.Province", b =>
@@ -1118,7 +1400,7 @@ namespace SenateData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ResolutionStatuses");
+                    b.ToTable("ResolutionStatus", "Resolution");
                 });
 
             modelBuilder.Entity("SenateData.DataModels.Common.ResolutionType", b =>
@@ -1240,11 +1522,11 @@ namespace SenateData.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
-
-                    b.Property<string>("VistType")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -1262,7 +1544,7 @@ namespace SenateData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("SenateData.DataModels.Auth.APIUser", null)
+                    b.HasOne("SenateData.DataModels.Auth.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1271,7 +1553,7 @@ namespace SenateData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("SenateData.DataModels.Auth.APIUser", null)
+                    b.HasOne("SenateData.DataModels.Auth.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1286,7 +1568,7 @@ namespace SenateData.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SenateData.DataModels.Auth.APIUser", null)
+                    b.HasOne("SenateData.DataModels.Auth.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1295,7 +1577,7 @@ namespace SenateData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("SenateData.DataModels.Auth.APIUser", null)
+                    b.HasOne("SenateData.DataModels.Auth.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1310,13 +1592,7 @@ namespace SenateData.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SenateData.DataModels.Common.District", "District")
-                        .WithMany()
-                        .HasForeignKey("DistrictId");
-
                     b.Navigation("Country");
-
-                    b.Navigation("District");
                 });
 
             modelBuilder.Entity("SenateData.DataModels.Common.District", b =>
@@ -1368,6 +1644,31 @@ namespace SenateData.Migrations
                         .HasForeignKey("ParliamentaryTermId");
 
                     b.Navigation("ParliamentaryTerm");
+                });
+
+            modelBuilder.Entity("SenateData.DataModels.Common.Post", b =>
+                {
+                    b.HasOne("SenateData.DataModels.Common.EmployeePool", "EmployeePool")
+                        .WithMany()
+                        .HasForeignKey("EmployeePoolId");
+
+                    b.HasOne("SenateData.DataModels.Common.PostSubType", "postSubType")
+                        .WithMany()
+                        .HasForeignKey("PostSubTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SenateData.DataModels.Common.PostType", "PostType")
+                        .WithMany()
+                        .HasForeignKey("PostTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EmployeePool");
+
+                    b.Navigation("PostType");
+
+                    b.Navigation("postSubType");
                 });
 
             modelBuilder.Entity("SenateData.DataModels.Common.ProvinceDivision", b =>

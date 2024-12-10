@@ -3,14 +3,19 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace SenateData.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class SchemaChanged : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "Resolution");
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -58,7 +63,7 @@ namespace SenateData.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Description = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -170,7 +175,8 @@ namespace SenateData.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    SortOrder = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -189,6 +195,20 @@ namespace SenateData.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ElectionTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EmployeePool",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmployeePool", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -394,7 +414,7 @@ namespace SenateData.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Posts",
+                name: "PostStatuses",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -404,7 +424,35 @@ namespace SenateData.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Posts", x => x.Id);
+                    table.PrimaryKey("PK_PostStatuses", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PostSubTypes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PostSubTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "postTypes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_postTypes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -452,7 +500,8 @@ namespace SenateData.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ResolutionStatuses",
+                name: "ResolutionStatus",
+                schema: "Resolution",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -462,7 +511,7 @@ namespace SenateData.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ResolutionStatuses", x => x.Id);
+                    table.PrimaryKey("PK_ResolutionStatus", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -535,7 +584,7 @@ namespace SenateData.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    VistType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -650,6 +699,29 @@ namespace SenateData.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Cities",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CountryId = table.Column<int>(type: "int", nullable: false),
+                    DivisionId = table.Column<int>(type: "int", nullable: false),
+                    IsDistrict = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cities", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Cities_Countries_CountryId",
+                        column: x => x.CountryId,
+                        principalTable: "Countries",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Divisions",
                 columns: table => new
                 {
@@ -693,6 +765,56 @@ namespace SenateData.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Posts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    BPSFrom = table.Column<int>(type: "int", nullable: false),
+                    BPSTo = table.Column<int>(type: "int", nullable: false),
+                    NumberOfPosts = table.Column<int>(type: "int", nullable: false),
+                    PermanentPosts = table.Column<int>(type: "int", nullable: false),
+                    TemporaryPosts = table.Column<int>(type: "int", nullable: false),
+                    RequiredQualification = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    JobExperience = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    JobDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AppointmentModeId = table.Column<int>(type: "int", nullable: false),
+                    SanctionNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SanctionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Remarks = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpgradationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsGazetted = table.Column<bool>(type: "bit", nullable: false),
+                    EmployeePoolsId = table.Column<int>(type: "int", nullable: false),
+                    PostTypeId = table.Column<int>(type: "int", nullable: false),
+                    PostSubTypeId = table.Column<int>(type: "int", nullable: false),
+                    PostStatusId = table.Column<int>(type: "int", nullable: false),
+                    EmployeePoolId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Posts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Posts_EmployeePool_EmployeePoolId",
+                        column: x => x.EmployeePoolId,
+                        principalTable: "EmployeePool",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Posts_PostSubTypes_PostSubTypeId",
+                        column: x => x.PostSubTypeId,
+                        principalTable: "PostSubTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Posts_postTypes_PostTypeId",
+                        column: x => x.PostTypeId,
+                        principalTable: "postTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProvinceDivisions",
                 columns: table => new
                 {
@@ -709,6 +831,53 @@ namespace SenateData.Migrations
                         name: "FK_ProvinceDivisions_Provinces_ProvinceId",
                         column: x => x.ProvinceId,
                         principalTable: "Provinces",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SenateUsers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FatherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DOB = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    GenderId = table.Column<int>(type: "int", nullable: false),
+                    ReligionId = table.Column<int>(type: "int", nullable: false),
+                    MaritalStatusId = table.Column<int>(type: "int", nullable: false),
+                    CityId = table.Column<int>(type: "int", nullable: false),
+                    CNIC = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CNICIssuanceDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CNICExpiryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsEmployee = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SenateUsers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SenateUsers_Cities_CityId",
+                        column: x => x.CityId,
+                        principalTable: "Cities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SenateUsers_Genders_GenderId",
+                        column: x => x.GenderId,
+                        principalTable: "Genders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SenateUsers_MaritalStatuses_MaritalStatusId",
+                        column: x => x.MaritalStatusId,
+                        principalTable: "MaritalStatuses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SenateUsers_Religions_ReligionId",
+                        column: x => x.ReligionId,
+                        principalTable: "Religions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -809,79 +978,34 @@ namespace SenateData.Migrations
                         principalColumn: "Id");
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Cities",
-                columns: table => new
+            migrationBuilder.InsertData(
+                table: "BasicPayScales",
+                columns: new[] { "Id", "Description", "IsActive" },
+                values: new object[,]
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    CountryId = table.Column<int>(type: "int", nullable: false),
-                    DivisionId = table.Column<int>(type: "int", nullable: false),
-                    DistrictId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Cities", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Cities_Countries_CountryId",
-                        column: x => x.CountryId,
-                        principalTable: "Countries",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Cities_Districts_DistrictId",
-                        column: x => x.DistrictId,
-                        principalTable: "Districts",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SenateUsers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FatherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DOB = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    GenderId = table.Column<int>(type: "int", nullable: false),
-                    ReligionId = table.Column<int>(type: "int", nullable: false),
-                    MaritalStatusId = table.Column<int>(type: "int", nullable: false),
-                    CityId = table.Column<int>(type: "int", nullable: false),
-                    CNIC = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CNICIssuanceDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CNICExpiryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsEmployee = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SenateUsers", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SenateUsers_Cities_CityId",
-                        column: x => x.CityId,
-                        principalTable: "Cities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SenateUsers_Genders_GenderId",
-                        column: x => x.GenderId,
-                        principalTable: "Genders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SenateUsers_MaritalStatuses_MaritalStatusId",
-                        column: x => x.MaritalStatusId,
-                        principalTable: "MaritalStatuses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SenateUsers_Religions_ReligionId",
-                        column: x => x.ReligionId,
-                        principalTable: "Religions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    { 1, "BS-1", true },
+                    { 2, "BS-2", true },
+                    { 3, "BS-3", true },
+                    { 4, "BS-4", true },
+                    { 5, "BS-5", true },
+                    { 6, "BS-6", true },
+                    { 7, "BS-7", true },
+                    { 8, "BS-8", true },
+                    { 9, "BS-9", true },
+                    { 10, "BS-10", true },
+                    { 11, "BS-11", true },
+                    { 12, "BS-12", true },
+                    { 13, "BS-13", true },
+                    { 14, "BS-14", true },
+                    { 15, "BS-15", true },
+                    { 16, "BS-16", true },
+                    { 17, "BS-17", true },
+                    { 18, "BS-18", true },
+                    { 19, "BS-19", true },
+                    { 20, "BS-20", true },
+                    { 21, "BS-21", true },
+                    { 22, "BS-22", true },
+                    { 23, "Not Mentioned", true }
                 });
 
             migrationBuilder.CreateIndex(
@@ -929,11 +1053,6 @@ namespace SenateData.Migrations
                 column: "CountryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cities_DistrictId",
-                table: "Cities",
-                column: "DistrictId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Districts_ProvinceDivisionId",
                 table: "Districts",
                 column: "ProvinceDivisionId");
@@ -962,6 +1081,21 @@ namespace SenateData.Migrations
                 name: "IX_ParliamentaryYears_ParliamentaryTermId",
                 table: "ParliamentaryYears",
                 column: "ParliamentaryTermId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_EmployeePoolId",
+                table: "Posts",
+                column: "EmployeePoolId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_PostSubTypeId",
+                table: "Posts",
+                column: "PostSubTypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_PostTypeId",
+                table: "Posts",
+                column: "PostTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProvinceDivisions_ProvinceId",
@@ -1029,6 +1163,9 @@ namespace SenateData.Migrations
                 name: "CourseTypes");
 
             migrationBuilder.DropTable(
+                name: "Districts");
+
+            migrationBuilder.DropTable(
                 name: "Divisions");
 
             migrationBuilder.DropTable(
@@ -1074,10 +1211,14 @@ namespace SenateData.Migrations
                 name: "Posts");
 
             migrationBuilder.DropTable(
+                name: "PostStatuses");
+
+            migrationBuilder.DropTable(
                 name: "Relations");
 
             migrationBuilder.DropTable(
-                name: "ResolutionStatuses");
+                name: "ResolutionStatus",
+                schema: "Resolution");
 
             migrationBuilder.DropTable(
                 name: "ResolutionTypes");
@@ -1101,6 +1242,9 @@ namespace SenateData.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
+                name: "ProvinceDivisions");
+
+            migrationBuilder.DropTable(
                 name: "Ministries");
 
             migrationBuilder.DropTable(
@@ -1108,6 +1252,15 @@ namespace SenateData.Migrations
 
             migrationBuilder.DropTable(
                 name: "SessionSittings");
+
+            migrationBuilder.DropTable(
+                name: "EmployeePool");
+
+            migrationBuilder.DropTable(
+                name: "PostSubTypes");
+
+            migrationBuilder.DropTable(
+                name: "postTypes");
 
             migrationBuilder.DropTable(
                 name: "Cities");
@@ -1122,22 +1275,16 @@ namespace SenateData.Migrations
                 name: "Religions");
 
             migrationBuilder.DropTable(
+                name: "Provinces");
+
+            migrationBuilder.DropTable(
                 name: "ParliamentaryTerms");
 
             migrationBuilder.DropTable(
                 name: "Countries");
 
             migrationBuilder.DropTable(
-                name: "Districts");
-
-            migrationBuilder.DropTable(
                 name: "ParliamentaryTenures");
-
-            migrationBuilder.DropTable(
-                name: "ProvinceDivisions");
-
-            migrationBuilder.DropTable(
-                name: "Provinces");
         }
     }
 }

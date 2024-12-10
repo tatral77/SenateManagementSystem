@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using SenateCore.Contracts.Common;
 
 using SenateCore.Models.CommonModels.BasicPayScaleModel;
-
+using SenateCore.Repository.Common;
 using SenateData.DataModels.Common;
 using System.Reflection;
 
