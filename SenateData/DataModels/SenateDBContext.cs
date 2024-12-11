@@ -5,6 +5,7 @@ using SenateData.Common;
 using SenateData.Configurations;
 using SenateData.DataModels.Auth;
 using SenateData.DataModels.Common;
+using SenateData.DataModels.Ministries;
 using System;
 using System.Collections.Generic;
 using System.Linq;

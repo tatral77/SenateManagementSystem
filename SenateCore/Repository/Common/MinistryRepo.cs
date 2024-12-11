@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using SenateCore.Contracts.Common;
 using SenateData.DataModels;
-using SenateData.DataModels.Common;
+using SenateData.DataModels.Ministries;
 namespace SenateCore.Repository.Common
 {
     public class MinistryRepo: GenericRepo<Ministry>, IMinistryRepo

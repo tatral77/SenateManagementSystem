@@ -15,6 +15,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="DataModels\Legislation\" />
+	  <Folder Include="DataModels\Ministers\" />
 	  <Folder Include="DataModels\Translation\" />
 	  <Folder Include="Migrations\" />
 	</ItemGroup>

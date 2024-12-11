@@ -1,4 +1,4 @@
-﻿using SenateData.DataModels.Common;
+﻿using SenateData.DataModels.Ministries;
 
 namespace SenateData.DataModels.Motions
 {

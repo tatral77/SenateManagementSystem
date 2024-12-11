@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SenateData.DataModels.Common;
+using SenateData.DataModels.Ministries;
 namespace SenateData.Configurations
 {
     public class MinistrySeeder: IEntityTypeConfiguration<Ministry>

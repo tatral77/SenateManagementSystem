@@ -8,8 +8,8 @@ namespace SenateData.DataModels.Common
     {
         [Key]
         public int Id { get; set; }
-     
-        [StringLength(150)]
+        [Required]
+        [MaxLength(150)]
         public string Description { get; set; }
         public bool IsActive { get; set; }
 

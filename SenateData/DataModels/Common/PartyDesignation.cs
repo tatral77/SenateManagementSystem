@@ -1,8 +1,13 @@
-﻿namespace SenateData.DataModels.Common
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SenateData.DataModels.Common
 {
     public class PartyDesignation
     {
+        [Key]
         public int Id { get; set; }
+        [Required]
+        [MaxLength(50)]
         public string Description { get; set; }
         public bool IsActive { get; set; }
     }

@@ -1,4 +1,5 @@
 ﻿using SenateData.DataModels.Common;
+using SenateData.DataModels.Ministries;
 using SenateData.DataModels.Translation;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,8 @@ namespace SenateData.DataModels.Questions
 {
     public class Question
     {
+
         public int Id { get; set; }
-        public int PreviousQuestionsId { get; set; }
         public int QuestionListId { get; set; }
         public string SuplimentaryListNo { get; set; }
         public DateTime QuestionDate { get; set; }
@@ -78,25 +79,54 @@ namespace SenateData.DataModels.Questions
         [ForeignKey(nameof(FileStatusId))]
         public int FileStatusId { get; set; }
 
-        [ForeignKey(nameof(UpdatedBy))]
-        public int UpdatedBy { get; set; }
 
-        [ForeignKey(nameof(SentForTranslationBy))]
-        public int SentForTranslationBy { get; set; }
 
-        [ForeignKey(nameof(TranslatedBy))]
-        public int TranslatedBy { get; set; }
-        [ForeignKey(nameof(InsertedBy))]
-        public int InsertedBy { get; set; }
+        [ForeignKey(nameof(InsertedById))]
+        public int InsertedById { get; set; }
 
-        [ForeignKey(nameof(RecoveredBy))]
-        public int RecoveredBy { get; set; }
+        [ForeignKey(nameof(UpdatedById))]
+        public int UpdatedById { get; set; }
 
-        [ForeignKey(nameof(DeletedBy))]
-        public int DeletedBy { get; set; }
 
-        [ForeignKey(nameof(AssignedForTranslationTo))]
-        public int AssignedForTranslationTo { get; set; }
+        [ForeignKey(nameof(DeletedById))]
+        public int DeletedById { get; set; }
+
+        [ForeignKey(nameof(RecoveredById))]
+        public int RecoveredById { get; set; }
+
+
+        [ForeignKey(nameof(SentForTranslationById))]
+        public int SentForTranslationById { get; set; }
+
+        [ForeignKey(nameof(TranslatedById))]
+        public int TranslatedById { get; set; }
+       
+
+        [ForeignKey(nameof(AssignedForTranslationToId))]
+        public int AssignedForTranslationToId { get; set; }
+
+        [ForeignKey(nameof(TranslationApprovedById))]
+        public int TranslationApprovedById { get; set; }
+
+
+        public SenateUser InsertedBy { get; set; }
+       
+        public SenateUser UpdatedBy { get; set; }
+
+        public SenateUser DeletedBy { get; set; }
+
+        public SenateUser RecoveredBy { get; set; }
+
+        public SenateUser SentForTranslationBy { get; set; }
+
+        public SenateUser TranslatedBy { get; set; }
+
+        public SenateUser AssignedForTranslationTo { get; set; }
+
+        public SenateUser TranslationApprovedBy { get; set; }
+
+
+
 
         [ForeignKey(nameof(ParliamentaryYearsId))]
         public int ParliamentaryYearsId { get; set; }
@@ -107,9 +137,7 @@ namespace SenateData.DataModels.Questions
         [ForeignKey(nameof(QuestionCategoryId))]
         public int QuestionCategoryId { get; set; }
 
-        [ForeignKey(nameof(TranslationApprovedBy))]
-        public int TranslationApprovedBy { get; set; }
-
+       
         public Ministry Ministry { get; set; }
         public TranslationType TranslationType { get; set; }
         public ParliamentarySession ParliamentarySession { get; set; }

@@ -6,7 +6,7 @@ namespace SenateData.DataModels.Common
     {
         [Key]
         public int Id { get; set; }
-
+        [Required]
         [MaxLength(25)]
         public string Description { get; set; }
         public bool IsActive { get; set; }

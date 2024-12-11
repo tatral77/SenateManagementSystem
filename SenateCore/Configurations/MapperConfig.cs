@@ -49,6 +49,7 @@ using SenateCore.Models.CommonModels.SittingTypeModel;
 using SenateCore.Models.CommonModels.VisitTypeModel;
 using SenateData.Common;
 using SenateData.DataModels.Common;
+using SenateData.DataModels.Ministries;
 using System;
 using System.Collections.Generic;
 using System.Linq;

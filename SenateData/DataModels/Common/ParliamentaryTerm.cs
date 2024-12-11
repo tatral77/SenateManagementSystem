@@ -1,7 +1,10 @@
-﻿namespace SenateData.DataModels.Common
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SenateData.DataModels.Common
 {
     public class ParliamentaryTerm
     {
+        [Key]
         public int Id { get; set; }
         public string Term { get; set; }
         public DateTime StartDate { get; set; }
