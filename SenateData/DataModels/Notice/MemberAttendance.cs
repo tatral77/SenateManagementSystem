@@ -1,11 +1,18 @@
-﻿namespace SenateData.DataModels.Notice
+﻿using SenateData.DataModels.Common;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SenateData.DataModels.Notice
 {
     public class MemberAttendance
     {
-        public int MemberAttendanceId { get; set; }
+        public int Id { get; set; }
         public int SessionSittingId { get; set; }
+
         public int MemberId { get; set; }
-        public string MemberName { get; set; }
+
+        [ForeignKey(nameof(AttendanceStatusId))]
         public int AttendanceStatusId { get; set; }
+        public AttendanceStatus AttendanceStatus { get; set; }
+        public Member Member { get; set; }
     }
 }

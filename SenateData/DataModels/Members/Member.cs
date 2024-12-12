@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,32 +10,40 @@ namespace Entities
 {
     public class Member
     {
-        public int EmpId { get; set; }
-        public int SystemUserId { get; set; }
-        public int ElectionProvince { get; set; }
-        public int PoliticalParty { get; set; }
-        public int Portfolio { get; set; }
-        public int MemberStatus { get; set; }
-        public int ConstituenciesId { get; set; }
-        public int PolAffiliation { get; set; }
-        public int IsActive { get; set; }
-        public int AssembliesId { get; set; }
-        public string SuiteNo { get; set; }
-        public string AccountId { get; set; }
-        public int HouseAffiliationId { get; set; }
-        public int PartyDesignationId { get; set; }
-        public int MemElectTypesId { get; set; }
-        public int ElectionTypesId { get; set; }
-        public int PartyDesignationsId { get; set; }
-        public DateTime TenureFrom { get; set; }
-        public DateTime TenureTo { get; set; }
-        public int Predecessor { get; set; }
-        public string OtherPartyDesignation { get; set; }
+        [Key]
+        public int Id { get; set; }
+        public string OtherPartyDesignations { get; set; }
+        public bool IsActive { get; set; }
+
+        [ForeignKey(nameof(SenateUserId))]
+        public int SenateUserId { get; set; }
+
+        [ForeignKey(nameof(ElectionProvinceId))]
+        public int ElectionProvinceId { get; set; }
+
+        [ForeignKey(nameof(PoliticalPartyId))]
+        public int PoliticalPartyId { get; set; }
+
+        [ForeignKey(nameof(SeatTypesId))]
         public int SeatTypesId { get; set; }
-        public string Description { get; set; }
-        public string Achievements { get; set; }
-        public string SPLTravelInstructions { get; set; }
-        public int MemTenuresId { get; set; }
+
+        [ForeignKey(nameof(MemberTenureId))]
+        public int MemberTenureId { get; set; }
+
+        [ForeignKey(nameof(MemberStatusId))]
+        public int MemberStatusId { get; set; }
+
+        [ForeignKey(nameof(ConstituenciesId))]
+        public int ConstituenciesId { get; set; }
+
+        [ForeignKey(nameof(HouseAffiliationId))]
+        public int HouseAffiliationId { get; set; }
+
+        [ForeignKey(nameof(PartyDesignationId))]
+        public int PartyDesignationId { get; set; }
+
+        [ForeignKey(nameof(ElectTypeId))]
+        public int ElectTypeId { get; set; }
 
     }
 }

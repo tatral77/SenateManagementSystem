@@ -46,6 +46,7 @@ using SenateCore.Models.CommonModels.ResolutionTypeModel;
 using SenateCore.Models.CommonModels.SeatTypeModel;
 using SenateCore.Models.CommonModels.SenateUserModel;
 using SenateCore.Models.CommonModels.SittingTypeModel;
+using SenateCore.Models.CommonModels.TranslationTypeModel;
 using SenateCore.Models.CommonModels.VisitTypeModel;
 using SenateData.Common;
 using SenateData.DataModels.Common;
@@ -384,6 +385,13 @@ namespace SenateCore.Configurations
             CreateMap<SittingType, BaseSittingTypeDto>().ReverseMap();
             CreateMap<SittingType, SittingTypeDto>().ReverseMap();
             #endregion
+            #region TranslationType
+            CreateMap<TranslationType, CreateTranslationTypeDto>().ReverseMap();
+            CreateMap<TranslationType, UpdateTranslationTypeDto>().ReverseMap();
+            CreateMap<TranslationType, GetTranslationTypeDto>().ReverseMap();
+            CreateMap<TranslationType, BaseTranslationTypeDto>().ReverseMap();
+            CreateMap<TranslationType, TranslationTypeDto>().ReverseMap();
+            #endregion TranslationType
             #region VisitType
             CreateMap<VisitType, CreateVisitTypeDto>().ReverseMap();
             CreateMap<VisitType, UpdateVisitTypeDto>().ReverseMap();

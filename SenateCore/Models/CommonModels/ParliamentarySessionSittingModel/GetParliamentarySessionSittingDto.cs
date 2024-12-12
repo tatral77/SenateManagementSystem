@@ -2,5 +2,6 @@
 {
     public class GetParliamentarySessionSittingDto: BaseParliamentarySessionSittingDto
     {
+        public int Id { get; set; }
     }
 }

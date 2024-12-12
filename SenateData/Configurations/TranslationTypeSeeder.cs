@@ -1,9 +1,9 @@
 ﻿using SenateData.DataModels.Common;
 namespace SenateData.Configurations
 {
-    public class VisitTypeSeeder
+    public class TranslationTypeSeeder
     {
-        public void Configure(EntityTypeBuilder<VisitType> builder)
+        public void Configure(EntityTypeBuilder<TranslationType> builder)
         {
             builder.HasData(
                 );

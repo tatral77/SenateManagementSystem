@@ -24,5 +24,14 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\SenateData\SenateData.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Models\HRMModels\" />
+	  <Folder Include="Models\LegislationModels\" />
+	  <Folder Include="Models\MemberModels\" />
+	  <Folder Include="Models\MotionModels\" />
+	  <Folder Include="Models\ResolutionModels\" />
+	  <Folder Include="Models\TranslationModels\" />
+	  <Folder Include="Models\NoticeModels\" />
+	</ItemGroup>
 
 </Project>

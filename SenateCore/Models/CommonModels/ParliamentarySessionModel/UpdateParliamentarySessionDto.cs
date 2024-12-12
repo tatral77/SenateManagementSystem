@@ -2,5 +2,6 @@
 {
     public class UpdateParliamentarySessionDto: BaseParliamentarySessionDto
     {
+        public int Id { get; set; }
     }
 }

@@ -1,11 +1,16 @@
-﻿namespace SenateData.DataModels.Common
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SenateData.DataModels.Common
 {
     public class ParliamentarySession
     {
+        [Key]
         public int Id { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string Description { get; set; }
         public int CalledBy { get; set; }
         public bool IsJointSession { get; set; }
-        public string Description { get; set; }
         //public string SessionType { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

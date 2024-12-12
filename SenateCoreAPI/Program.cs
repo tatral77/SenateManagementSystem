@@ -153,6 +153,7 @@ builder.Services.AddScoped<IResolutionTypeRepo, ResolutionTypeRepo>();
 builder.Services.AddScoped<ISeatTypeRepo, SeatTypeRepo>();
 builder.Services.AddScoped<ISenateUserRepo, SenateUserRepo>();
 builder.Services.AddScoped<ISittingTypeRepo, SittingTypeRepo>();
+builder.Services.AddScoped<ITranslationTypeRepo, TranslationTypeRepo>();
 builder.Services.AddScoped<IVisitTypeRepo, VisitTypeRepo>();
 
 #endregion
