@@ -21,10 +21,8 @@ namespace SenateData.DataModels.Legislation
 
         [ForeignKey(nameof(BillOriginId))]
         public int BillOriginId { get; set; }
-
         public int ParliamentarySessionId { get; set; }
         public int MemberId { get; set; }
-
         public BillStatus BillStatus { get; set; }
         public BillType BillType { get; set; }
         public BillOrigin BillOrigin{ get; set; }
