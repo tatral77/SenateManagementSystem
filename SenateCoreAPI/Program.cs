@@ -30,9 +30,6 @@ builder.Services.AddIdentityCore<ApplicationUser>()
     .AddDefaultTokenProviders();
 #endregion
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-
 #region Swagger
 builder.Services.AddSwaggerGen(options =>
 {
@@ -96,18 +93,16 @@ options.AddPolicy("AllowAll",
 //    });
 #endregion
 
-
 #region SERLOG
 builder.Host.UseSerilog((context, loggerConfiguration) =>
     loggerConfiguration.WriteTo.Console()
                        .ReadFrom.Configuration(context.Configuration));
 #endregion
 
-builder.Services.AddAutoMapper(typeof(MapperConfig));
-
 #region Contracts
 
 builder.Services.AddScoped(typeof(IGenericRepo<>), typeof(GenericRepo<>));
+builder.Services.AddScoped<IAttendanceStatusRepo, AttendanceStatusRepo>();
 builder.Services.AddScoped<IBasicPayScaleRepo, BasicPayScaleRepo>();
 builder.Services.AddScoped<IBillOriginRepo, BillOriginRepo>();
 builder.Services.AddScoped<IBillStatusRepo, BillStatusRepo>();
@@ -118,10 +113,10 @@ builder.Services.AddScoped<IConstituencyRepo, ConstituencyRepo>();
 builder.Services.AddScoped<IContractTypeRepo, ContractTypeRepo>();
 builder.Services.AddScoped<ICountryRepo, CountryRepo>();
 builder.Services.AddScoped<ICourseTypeRepo, CourseTypeRepo>();
-builder.Services.AddScoped<IDistrictRepo, DistrictRepo>(); 
+builder.Services.AddScoped<IDistrictRepo, DistrictRepo>();
 builder.Services.AddScoped<IDivisionRepo, DivisionRepo>();
 builder.Services.AddScoped<IEducationLevelRepo, EducationLevelRepo>();
-builder.Services.AddScoped<IElectionTypeRepo, ElectionTypeRepo>(); 
+builder.Services.AddScoped<IElectionTypeRepo, ElectionTypeRepo>();
 builder.Services.AddScoped<IGenderRepo, GenderRepo>();
 builder.Services.AddScoped<IHouseAffiliationRepo, HouseAffiliationRepo>();
 builder.Services.AddScoped<IMaritalStatusRepo, MaritalStatusRepo>();
@@ -158,8 +153,6 @@ builder.Services.AddScoped<IVisitTypeRepo, VisitTypeRepo>();
 
 #endregion
 
-// Add services to the container.
-
 #region JWT
 builder.Services.AddAuthentication(options =>
 {
@@ -186,6 +179,31 @@ builder.Services.AddResponseCaching(options =>
 });
 
 #endregion
+
+#region CACHING
+app.UseResponseCaching();
+
+app.Use(async (context, next) =>
+{
+    context.Response.GetTypedHeaders().CacheControl =
+        new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
+        {
+            Public = true,
+            MaxAge = TimeSpan.FromSeconds(10)
+        };
+    context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
+        new string[] { "Accept-Encoding" };
+
+    await next();
+});
+#endregion
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAutoMapper(typeof(MapperConfig));
+
+// Add services to the container.
+
+
 builder.Services.AddControllers().AddOData(options =>
 {
     options.Select().Filter().OrderBy();
@@ -212,33 +230,10 @@ else
 }
 
 app.UseSerilogRequestLogging();
-
 app.UseMiddleware<ExceptionMiddleware>();
-
 app.UseHttpsRedirection();
-
 app.UseCors("AllowAll");
-#region CACHING
-app.UseResponseCaching();
-
-app.Use(async (context, next) =>
-{
-    context.Response.GetTypedHeaders().CacheControl =
-        new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
-        {
-            Public = true,
-            MaxAge = TimeSpan.FromSeconds(10)
-        };
-    context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
-        new string[] { "Accept-Encoding" };
-
-    await next();
-});
-#endregion
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

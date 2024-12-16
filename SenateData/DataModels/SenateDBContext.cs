@@ -6,12 +6,6 @@ using SenateData.Configurations;
 using SenateData.DataModels.Auth;
 using SenateData.DataModels.Common;
 using SenateData.DataModels.Ministries;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace SenateData.DataModels
 {
     public class SenateDBContext : IdentityDbContext<ApplicationUser>
@@ -37,10 +31,8 @@ namespace SenateData.DataModels
             #endregion
         }
 
-
-
-
         #region Common
+        public DbSet<AttendanceStatus> AttendanceStatuses { get; set; }
         public DbSet<BasicPayScale> BasicPayScales { get; set; }
         public DbSet<BillStatus> BillStatuses { get; set; }
         public DbSet<BillType> BillTypes { get; set; }
@@ -87,32 +79,38 @@ namespace SenateData.DataModels
         public DbSet<SittingType> SittingTypes { get; set; }
         public DbSet<VisitType> VisitTypes { get; set; }
         #endregion  Common
+
         #region HRM
 
         #endregion
+
         #region Legislation
 
         #endregion
+
         #region Member
 
         #endregion
+
         #region Motion
 
         #endregion
+
         #region Notice
 
         #endregion
+
         #region Question
 
         #endregion
+
         #region Resolution
 
         #endregion
+
         #region Translation
 
         #endregion
-
-
 
     }
 }
