@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.OData.Query;
+using Microsoft.AspNetCore.Data.Query;
 using SenateCore.Contracts.Common;
 using SenateCore.Exceptions;
 using SenateCore.Models.CommonModels.BasicPayScaleModel;

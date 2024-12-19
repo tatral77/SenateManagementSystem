@@ -1,8 +1,9 @@
 ﻿using SenateData.DataModels.HRM;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace SenateData.DataModels.Common
 {
-   
+    [Table(nameof(Branch), Schema = "HRM")]
     public class Branch
     {
         [Key]
